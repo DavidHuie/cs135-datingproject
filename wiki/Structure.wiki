@@ -1,0 +1,107 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+				Things We need for the Dating Site.
+
+Organizational Tasks:
+1. Figure out combined IDE and methodology, i.e. how exactly ARE we going to share data/information and develop this thing.
+We are going 
+2. Hosting/ server situation. Apache? Mudd? What do you know David Huie?
+3. Determine and Delegate tasks.
+4. Agree on deadlines.
+
+
+
+
+A Login Page
+A database of usernames and passwords that interfaces with this webpage.
+Therefore, we need a servlet that intercepts usernames and passwords and directs them to their personalized page.
+We need a database to store the data that customers have entered.
+We need an admin access page that has the ability to remove and add users.
+We need a jsp page template that is able to dynamically generate a user’s profile that is visible to everyone. In other words, what people will see when they view the page. This page needs to be able to access the profile’s data using only the profile’s name. The viewer must be able to click a button to send a message to this user.
+
+We need a message handling program that 
+
+
+
+
+
+
+
+
+
+
+
+
+LOGIN: JSP
+Enter username
+Enter password.
+Login button
+register? button
+FUNCTIONALITY:
+successful registration takes user to HOMEVIEW
+unsuccessful prompts “try again” message.
+
+REGISTRATION: JSP
+ Enter Username.
+Interface with uname database to see if it is available.
+Enter Password.
+FUNCTIONALITY: upon successful registration, send user to EDIT PROFILE.
+ 
+
+
+EDIT PROFILE
+
+User can: Upload picture.
+Write and edit description
+Answer questions.
+Button to message inbox screen.
+Button to profile search screen.
+Click button to view public profile.
+
+MESSAGE INBOX.
+See an abridged version of every message in your inbox, the username of the sender, and a picture of the sender. ability to click on a message and view the whole thing.
+
+PROFILE BROWSING:
+A jsp page that shows multiple miniprofiles. A miniprofile contains the username, picture, sex, college, orientation, and first X lines of the description from a viewprofile. 
+Functionality:
+MANDATORY: click on a profile name, this takes user to the viewprofile.
+OPTIONAL: Filtering by: , searching, etc.
+multiple page functionality.
+logout at bottom.
+
+
+PROFILE INFO
+A profile should show:
+Username
+Photo.
+Sex.
+Age/Birthday
+Class/year. 
+College
+Sexual Orientation
+Dorm 
+Major
+Hobbies
+Interests
+Extracurricular
+About Me.
+I’m looking for:
+Username 
+Password
+Database that contains all this information.
+
+
+
+
+
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
