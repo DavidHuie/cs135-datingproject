@@ -1,7 +1,7 @@
 import java.sql.*;
 /**
  * AccessDB 
- * @author Bryce Gerard, David Huie, Chrysanthia
+ * @author
  * 
  * this class starts the connection with the main database
  */
