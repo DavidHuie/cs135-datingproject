@@ -31,7 +31,7 @@ public class AccessDB
 		public static Connection openconnection() throws SQLException
 		{
 			return DriverManager.getConnection
-            ("jdbc:mysql://localhost:3306/bookDB",
+            ("jdbc:mysql://localhost:3306/DB",
 	     "user",
 	     "password");
 		}
