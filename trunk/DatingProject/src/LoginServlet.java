@@ -1,6 +1,8 @@
 
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import login_utilities.*;
 
 import coreservlets.ServletUtilities;
@@ -33,11 +35,19 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		// get parameters and filter them
 		String username = ServletUtilities.filter(request.getParameter("username"));
 		String password = ServletUtilities.filter(request.getParameter("password"));
 		
-		if login_utilities.UserAuthentication(username, password) {
-			// do stuff like forward them to their profile.
+		// add cookies to response
+		try {
+			if (UserAuthentication.authenticate_login(username, password)){
+				Cookies.createValidatedUserCookies(response, username, password);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
