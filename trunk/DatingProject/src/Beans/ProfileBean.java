@@ -3,6 +3,7 @@
  * CS135 Final Project
  * This is a bean class that stores all of the information from a User's profile
  */
+package Beans;
 import java.util.*;
 import java.io.*;
 public class ProfileBean {
@@ -137,6 +138,15 @@ public class ProfileBean {
 		return(classyear);
 	}
 
+	public void setSex(String param)
+	{
+		this.sex = param;
+	}
 
-
+	public String getSex()
+	{
+		return(sex);
+	}
+	
+	
 }

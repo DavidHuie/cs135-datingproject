@@ -76,7 +76,7 @@ public class RegistrationServlet extends HttpServlet {
 		Statement statement = connection.createStatement();
 		String query = "INSERT INTO main(username, password) VALUES(\""+username+"\", \""+ password+"\");";
 		//add name and password to database.
-		statement.executeQuery(query);
+		statement.executeUpdate(query);
 		//store username and password in request
 		request.setAttribute("username", username);
 		request.setAttribute("password", password);
