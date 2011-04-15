@@ -72,7 +72,7 @@ public class RegistrationServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		//connect to database
 		try{
-		Connection connection = AccessDB.openconnection();
+		Connection connection = database.AccessDB.openconnection();
 		Statement statement = connection.createStatement();
 		String query = "INSERT INTO main(username, password) VALUES(\""+username+"\", \""+ password+"\");";
 		//add name and password to database.
