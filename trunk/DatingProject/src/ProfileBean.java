@@ -79,11 +79,11 @@ public class ProfileBean {
 	}
 
 	public void setActivities(String param){
-		this.orientation = param;
+		this.activities = param;
 	}
 	
 	public String getActivities(){
-		return(orientation);
+		return(activities);
 	}
 
 	public void setStatus(String param){
@@ -118,10 +118,24 @@ public class ProfileBean {
 	}
 	
 	public String getBirthmonth(){
-		return(orientation);
+		return(birthmonth);
 	}
 
-	public String 
+	public void setBirthyear(String param){
+		this.birthyear = param;
+	}
+	
+	public String getBirthyear(){
+		return(birthyear);
+	}
+	
+	public void setClassyear(String param){
+		this.classyear = param;
+	}
+	
+	public String getClassyear(){
+		return(classyear);
+	}
 
 
 
