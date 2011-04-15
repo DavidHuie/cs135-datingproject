@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS DB;
 CREATE DATABASE DB;
 
 /*we're gonna have to decide what this is*/
-GRANT ALL PRIVILEGES ON bookDB.* to user@localhost IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON DB.* to user@localhost IDENTIFIED BY 'password';
 
 USE DB;
 

@@ -5,9 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>View Profile</title>
-
 </head>
 <body>
+<jsp:useBean id ="currentProfile" class = "Beans.ProfileBean" scope = Application>
 
+
+
+
+</jsp:useBean>
 </body>
 </html>
