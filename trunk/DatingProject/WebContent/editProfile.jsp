@@ -8,9 +8,10 @@
 </head>
 <h1>Update your profile...</h1>
 <body>
-	<form action="/profileServlet" method="post">
-		Age:<input type="int" name="age"><br /> 
+	<form action="/editProfileServlet" method="post">
+		Age:<input type="int" value="--None--" name="age"><br /> 
 		Birthday:<select name="mydropdown">
+			<option value="month" selected="selected">Month</option>
 			<option value="january">January</option>
 			<option value="february">February</option>
 			<option value="march">March</option>
@@ -25,6 +26,7 @@
 			<option value="december">December</option>
 
 		</select> <select name="mydropdown">
+			<option value="day" selected="selected">Day</option>
 			<option value="1">1</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
@@ -58,6 +60,7 @@
 			<option value="31">31</option>
 
 		</select> <select name="mydropdown">
+			<option value="year" selected="selected">Year</option>
 			<option value="1985">1985</option>
 			<option value="1986">1986</option>
 			<option value="1987">1987</option>
@@ -69,14 +72,17 @@
 			<option value="1993">1993</option>
 		</select><br /> 
 		School: <select name="mydropdown">
+		<option value="none" selected="selected">--None--</option>
 			<option value="cmc">Claremont McKenna</option>
 			<option value="hmc">Harvey Mudd</option>
 			<option value="pitz">Pitzer</option>
 			<option value="pomo">Pomona</option>
 			<option value="scripps">Scripps</option>
 		</select><br />
-		Sex:<input type="text" name="sex"><br /> 
-		Seeking:<input type="text" name="seeking"><br /> 
-		Description:<textarea></textarea><br />
+		Sex:<input type="text" value="--None--" name="sex"><br /> 
+		Seeking:<input type="text" value="--None--" name="seeking"><br /> 
+		Description:<textarea>I am...</textarea><br />
+		Activities:<textarea>I like...</textarea><br />
+		<input type="submit" value="Save Changes" />
 </body>
 </html>
