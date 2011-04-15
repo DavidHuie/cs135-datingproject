@@ -11,6 +11,8 @@ public class UserAuthentication {
 	
 	// Will ensure that a user with the given password exists
 	public static Boolean authenticate_login(String username, String password) throws SQLException {
+		
+		// Check easy cases
 		if (username == null || password == null || username.equals("") || password.equals("")) {
 			return false;
 		}
