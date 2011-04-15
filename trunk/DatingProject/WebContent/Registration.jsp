@@ -15,7 +15,7 @@ Choose A User Name and Password
 <br />
 <form action = "/RegistrationServlet" method = "post">
 User Name:<input type = "text" name = "UserName"><br />
-Password:<input type = "text" name = "Password">
+Password:<input type = "password" name = "Password">
 <input type = "hidden" name = "RequestType" value = "Registration">
 </form>
 </body>
