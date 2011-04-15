@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import login_utilities.*;
 
 import coreservlets.ServletUtilities;
-import coreservlets.ServletUtilities.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Login
  */
-@WebServlet("/Login")
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -44,6 +43,12 @@ public class LoginServlet extends HttpServlet {
 		try {
 			if (UserAuthentication.authenticate_login(username, password)){
 				Cookies.createValidatedUserCookies(response, username, password);
+				
+				// Redirect to homepage
+				response.sendRedirect("/index.html"); // placeholder
+			} else {
+				// Show login error
+				response.sendError(403, "Invalid user credentials");
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -13,6 +13,7 @@ import login_utilities.Cookies;
  * Servlet implementation class LogoutServlet
  */
 @WebServlet("/LogoutServlet")
+
 public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,8 +31,8 @@ public class LogoutServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// clear cookies first
-		Cookies.clearUserCookies(response);
-		response.sendRedirect("/index.html");
+		//Cookies.clearUserCookies(response);
+		response.sendRedirect("/DatingProject/index.html");
 	}
 
 	/**
