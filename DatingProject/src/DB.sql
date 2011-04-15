@@ -12,6 +12,7 @@ USE DB;
 CREATE TABLE main{
 username VARCHAR(255),
 password VARCHAR(255),
+email VARCHAR(255),
 age int,
 sex VARCHAR(255),
 orientation VARCHAR(255),
