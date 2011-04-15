@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 		String password = ServletUtilities.filter(request.getParameter("password"));
 		
 		if login_utilities.UserAuthentication(username, password) {
-			// do stuff
+			// do stuff like forward them to their profile.
 		}
 	}
 
