@@ -8,11 +8,7 @@
 </head>
 <body>
 <h1>Register Here</h1>
-<br>
-<br>
-Choose A User Name and Password
-<br />
-<br />
+<br>Choose A User Name and Password<br/>
 <form action = "/RegistrationServlet" method = "post">
 User Name:<input type = "text" name = "UserName"><br />
 Password:<input type = "password" name = "Password">
