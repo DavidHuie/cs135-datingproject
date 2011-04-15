@@ -24,5 +24,6 @@ status VARCHAR(255),
 birthday, VARCHAR(255),
 birthmonth, VARCHAR(255),
 birthyear, VARCHAR(255),
-seeking VARCHAR(1024)
+seeking VARCHAR(1024),
+PRIMARY KEY(username)
 }
