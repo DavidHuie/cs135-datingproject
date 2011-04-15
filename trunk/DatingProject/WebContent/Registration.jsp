@@ -13,8 +13,6 @@
 User Name:<input type = "text" name = "username"><br />
 Password:<input type = "text" name = "password">
 <input type = "hidden" name = "requesttype" value = "registration">
-
-
 </form>
 </body>
 </html>
