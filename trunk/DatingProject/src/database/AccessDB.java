@@ -1,4 +1,7 @@
+package database;
+
 import java.sql.*;
+
 /**
  * AccessDB 
  * @author Bryce Gerard, David Huie, Chrysanthia Cheung-Lau
@@ -34,6 +37,17 @@ public class AccessDB
             ("jdbc:mysql://localhost:3306/DB",
 	     "user",
 	     "password");
+		}
+		
+		public static ResultSet get_result_set(String query) {
+			try {
+				Connection connection = openconnection();
+				Statement statement = connection.createStatement();
+				ResultSet resultSet = statement.executeQuery(query);
+				return resultSet;
+			} catch (SQLException e) {
+				throw new RuntimeException("Error accessing database: " + e);
+			}
 		}
 		
 }
