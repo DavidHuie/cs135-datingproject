@@ -15,7 +15,7 @@ public class CreateBean {
 	 * @return a bean with all of the user data
 	 * @throws SQLException
 	 */
-	public ProfileBean createBeanFromDB(String username) throws SQLException
+	public static ProfileBean createBeanFromDB(String username) throws SQLException
 	{
 		ProfileBean bean = new ProfileBean();
 		Connection connection = AccessDB.openconnection();
