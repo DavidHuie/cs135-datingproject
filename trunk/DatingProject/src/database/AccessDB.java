@@ -13,8 +13,8 @@ public class AccessDB
 	static{
 		try{
 			System.out.println("About to load the driver");
-            //	    Class.forName("com.mysql.jdbc.Driver");
-            Class.forName("org.gjt.mm.mysql.Driver");
+            //Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("org.gjt.mm.mysql.Driver");
             System.out.println("The driver is loaded");
 			
 			
