@@ -10,9 +10,11 @@
 <h1>Register Here</h1>
 <br>Choose A User Name and Password<br/>
 <form action = "/RegistrationServlet" method = "post">
-User Name:<input type = "text" name = "UserName"><br />
-Password:<input type = "password" name = "Password">
-<input type = "hidden" name = "RequestType" value = "Registration">
+User Name:<input type = "text" name = "username"><br />
+Password:<input type = "text" name = "password">
+<input type = "hidden" name = "requesttype" value = "registration">
+
+
 </form>
 </body>
 </html>
