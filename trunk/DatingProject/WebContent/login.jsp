@@ -7,11 +7,13 @@
 <title>Login</title>
 </head>
 <body>
-<h1>Login</h1>
+<h1>Login below</h1>
+
 <form action="/Login" method="post">
 Username: <input type="text" name="username"><br/>
 Password: <input type="password" name="password"><br/>
 <input type="submit">
+
 </form>
 </body>
 </html>
