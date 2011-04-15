@@ -9,7 +9,7 @@ public class ProfileBean {
 	private String username;
 	private String password;
 	private String email;
-	private int age;
+	private String age;
 	private String sex;
 	private String orientation;
 	private String description;
@@ -17,7 +17,10 @@ public class ProfileBean {
 	private String activities;
 	private String status;
 	private String seeking;
-	private int year;
+	private String birthday;
+	private String birthmonth;
+	private String birthyear;
+	private String classyear;
 	
 	public void setUsername(String param){
 		this.username = param;
@@ -37,18 +40,88 @@ public class ProfileBean {
 		return(password);
 	}
 
+	public void setEmail(String param){
+		this.email = param;
+	}
+	
+	public String getEmail()
+	{
+		return(email);
+	}
 
+	public void setAge(String param)
+	{
+		this.age = param;
+	}
+	
+	public void setOrientation(String param){
+		this.orientation = param;
+	}
+	
+	public String getOrientation(){
+		return(orientation);
+	}
+	
+	public void setDescription(String param){
+		this.description = param;
+	}
+	
+	public String getDescription(){
+		return(description);
+	}
+	
+	public void setCollege(String param){
+		this.college = param;
+	}
+	
+	public String getCollege(){
+		return(college);
+	}
 
+	public void setActivities(String param){
+		this.orientation = param;
+	}
+	
+	public String getActivities(){
+		return(orientation);
+	}
 
+	public void setStatus(String param){
+		this.status = param;
+	}
+	
+	public String getStatus(){
+		return(status);
+	}
 
+	public void setSeeking(String param)
+	{
+		this.seeking = param;
+	}
 
+	public String getSeeking()
+	{
+		return (seeking);
+	}
 
+	public void setBirthday(String param){
+		this.birthday = param;
+	}
+	
+	public String getBirthday(){
+		return(birthday);
+	}
 
+	
+	public void setBirthmonth(String param){
+		this.birthmonth = param;
+	}
+	
+	public String getBirthmonth(){
+		return(orientation);
+	}
 
-
-
-
-
+	public String 
 
 
 
