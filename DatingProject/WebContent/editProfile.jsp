@@ -10,7 +10,7 @@
 <body>
 	<form action="/editProfileServlet" method="post">
 		Age:<input type="int" value="--None--" name="age"><br /> 
-		Birthday:<select name="mydropdown">
+		Birthday:<select name="birthmonth">
 			<option value="month" selected="selected">Month</option>
 			<option value="january">January</option>
 			<option value="february">February</option>
@@ -25,7 +25,7 @@
 			<option value="november">November</option>
 			<option value="december">December</option>
 
-		</select> <select name="mydropdown">
+		</select> <select name="birthday">
 			<option value="day" selected="selected">Day</option>
 			<option value="1">1</option>
 			<option value="2">2</option>
@@ -59,7 +59,7 @@
 			<option value="30">30</option>
 			<option value="31">31</option>
 
-		</select> <select name="mydropdown">
+		</select> <select name="birthyear">
 			<option value="year" selected="selected">Year</option>
 			<option value="1985">1985</option>
 			<option value="1986">1986</option>
