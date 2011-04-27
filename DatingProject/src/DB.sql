@@ -10,6 +10,7 @@ USE DB;
 /**this main table will contain all of the data for now*/
 CREATE TABLE main(
 	username VARCHAR(255),
+	fullname VARCHAR(255),
 	password VARCHAR(255),
 	email VARCHAR(255),
 	age VARCHAR(255),
@@ -25,6 +26,13 @@ CREATE TABLE main(
 	birthyear VARCHAR(255),
 	seeking VARCHAR(1024),
 	PRIMARY KEY (username)
+);
+
+CREATE TABLE messages(
+	sender VARCHAR(255),
+	recipient VARCHAR(255),
+	message_body VARCHAR(65535),
+	time_stamp DATE,
 );
 
 INSERT INTO main (username, password) VALUES("administrator", "administrator");

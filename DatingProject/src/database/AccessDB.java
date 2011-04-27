@@ -50,4 +50,10 @@ public class AccessDB
 			}
 		}
 		
+		public static void execute_update_query(String query) throws SQLException {
+			Connection connection = openconnection();
+			Statement statement = connection.createStatement();
+			statement.executeUpdate(query);
+		}
+		
 }
