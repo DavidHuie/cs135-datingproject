@@ -10,7 +10,7 @@
 <h1>Login below</h1>
 
 <form action="LoginServlet" method="post">
-Username: <input type="text" name="username"><br/>
+User Name: <input type="text" name="username"><br/>
 Password: <input type="password" name="password"><br/>
 <input type="submit" value= "Log In">
 </form>
