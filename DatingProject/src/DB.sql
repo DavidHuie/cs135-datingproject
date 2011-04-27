@@ -26,3 +26,5 @@ CREATE TABLE main(
 	seeking VARCHAR(1024),
 	PRIMARY KEY (username)
 );
+
+INSERT INTO main (username, password) VALUES("administrator", "administrator");
