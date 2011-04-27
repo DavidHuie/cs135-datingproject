@@ -35,6 +35,7 @@ public class CreateBean {
 		bean.setDescription(resultset.getString("description"));
 		bean.setStatus(resultset.getString("status"));
 		bean.setClassyear(resultset.getString("classyear"));
+		bean.setSeeking(resultset.getString("seeking"));
 		return bean;
 		
 		

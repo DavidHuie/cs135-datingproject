@@ -8,12 +8,18 @@
 </head>
 <body>
 <h1>Register Here</h1>
+<%@ taglib uri ="/WEB-INF/tlds/cupid-taglib.tld" 
+prefix = "cupid" %>
 <br>Choose A User Name and Password<br/>
-<form action = "/RegistrationServlet" method = "post">
+<form action = "RegistrationServlet" method = "post">
 User Name:<input type = "text" name = "username"><br />
 Password:<input type = "password" name = "password">
 <input type = "hidden" name = "requesttype" value = "registration">
 <input type = "submit" value = "Click Here to Register" />
-</form>
+</form><br />
+<cupid:terror>
+There already exists a user of that name,
+please try another.
+</cupid:terror>
 </body>
 </html>

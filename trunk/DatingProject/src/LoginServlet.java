@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import login_utilities.*;
-
+import javax.servlet.*;
 import coreservlets.ServletUtilities;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -48,7 +48,13 @@ public class LoginServlet extends HttpServlet {
 				response.sendRedirect("/index.html"); // placeholder
 			} else {
 				// Show login error
-				response.sendError(403, "Invalid user credentials");
+				//response.sendError(403, "Invalid user credentials");
+				//sends the user back to Login Page, this time an error will be displayed.
+				RequestDispatcher dispatcher = request.getRequestDispatcher("Login.jsp");
+				request.setAttribute("Error", true);
+				dispatcher.forward(request,response);
+			
+			
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
