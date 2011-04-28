@@ -7,7 +7,10 @@ import java.util.Collections;
 import database.AccessDB;
 
 public class SearchTools {
-	public ArrayList<QueryableName> get_queryable_names_list(String search_query) throws SQLException {
+	
+	// Takes in a search query consisting of a user's full name.
+	// Returns an ArrayList of QueryableNames ordered by relevance.
+	public static ArrayList<QueryableName> get_queryable_names_list(String search_query) throws SQLException {
 		String query = "SELECT username, fullname FROM main";
 		ResultSet set = AccessDB.get_result_set(query);
 		
@@ -27,5 +30,10 @@ public class SearchTools {
 		Collections.sort(list);
 		
 		return list;
+	}
+	
+	public static String test() throws SQLException {
+		ArrayList<QueryableName> x = get_queryable_names_list("mt");
+		return x.remove(0).name;
 	}
 }
