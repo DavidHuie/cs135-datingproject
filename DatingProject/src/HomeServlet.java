@@ -4,9 +4,6 @@
  * this servlet has t 
  */
 import Beans.*;
-import database.*;
-import coreservlets.*;
-import login_utilities.*;
 import java.sql.*;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -46,7 +43,7 @@ public class HomeServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String Cookiename = login_utilities.Cookies.cookiePrefix + login_utilities.Cookies.usernameSuffix;
-		Cookie usercookie = coreservlets.CookieUtilities.getCookie(request, "claremontcupidusername");
+		Cookie usercookie = coreservlets.CookieUtilities.getCookie(request, Cookiename);
 		String username = usercookie.getValue();
 		System.out.println("Home Username is" +username);
 		try{

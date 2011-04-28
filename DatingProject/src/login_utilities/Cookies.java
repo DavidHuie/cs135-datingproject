@@ -17,6 +17,9 @@ public class Cookies {
 		Cookie userCookie = new Cookie(cookiePrefix + usernameSuffix, username);
 		Cookie passwordCookie = new Cookie(cookiePrefix + passwordSuffix, password);
 		
+		userCookie.setMaxAge(60*60*24*365);
+		passwordCookie.setMaxAge(60*60*24*365);
+		
 		response.addCookie(userCookie);
 		response.addCookie(passwordCookie);
 	}
