@@ -11,7 +11,8 @@ public class QueryableName implements Comparable<QueryableName>{
 		this.query = query;
 	}
 	
-	public int compareTo(QueryableName dummy) {
-		return LevenshteinDistanceMetric.distance(this.name, this.query);
+	public int compareTo(QueryableName name) {
+		return LevenshteinDistanceMetric.distance(this.name, this.query) -
+		LevenshteinDistanceMetric.distance(name.name, name.query);
 	}
 }

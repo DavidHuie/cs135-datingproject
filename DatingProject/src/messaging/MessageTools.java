@@ -13,6 +13,9 @@ public class MessageTools{
 	
 	static DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	
+	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	// Make sure to check if the ArrayList is empty; no messages could exist.
+	
 	public static ArrayList<Message> get_sender_messages(String username) throws SQLException {
 		return resultset_to_list(get_sender_messages_resultset(username));
 	}
