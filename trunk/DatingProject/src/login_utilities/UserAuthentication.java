@@ -25,7 +25,7 @@ public class UserAuthentication {
 	}
 	
 	public static Boolean usernameExists(String username) throws SQLException {
-		String query = "SELECT username FROM main WHERE main.username = \"" + username + "\"";
+		String query = "SELECT username FROM main WHERE username = \'" + username + "\'";
 		ResultSet result = AccessDB.get_result_set(query);
 		
 		// This is valid because next() returns a boolean
