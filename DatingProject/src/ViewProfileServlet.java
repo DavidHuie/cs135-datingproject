@@ -52,7 +52,7 @@ public class ViewProfileServlet extends HttpServlet {
 		try{
 		ProfileBean viewBean = database.CreateBean.createBeanFromDB(username);
 		ServletContext scontext = getServletContext();
-		scontext.setAttribute("Currentprofilebean", viewBean);
+		scontext.setAttribute("currentProfile", viewBean);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("ViewProfile.jsp");
 		
 		}

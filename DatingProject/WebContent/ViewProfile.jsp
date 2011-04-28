@@ -9,7 +9,11 @@
 <body>
 Welcome to your profile.
 <jsp:useBean id ="currentProfile" class = "Beans.ProfileBean" scope = application>
-
+<jsp:getProperty name = "currentProfile" property = "username" />
+<jsp:getProperty name = "currentProfile" property = "sex" />
+<jsp:getProperty name = "currentProfile" property = "age" />
+<jsp:getProperty name = "currentProfile" property = "college" />
+<jsp:getProperty name = "currentProfile" property = "orientation" />
 
 
 </jsp:useBean>
