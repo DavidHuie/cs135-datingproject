@@ -83,6 +83,8 @@
 		Seeking:<input type="text" value="--None--" name="seeking"><br /> 
 		Description:<textarea>I am...</textarea><br />
 		Activities:<textarea>I like...</textarea><br />
+		<input type = "hidden" name = "newOrOld" value = "new" />
 		<input type="submit" value="Save Changes" />
+		
 </body>
 </html>

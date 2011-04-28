@@ -23,6 +23,50 @@ public class ProfileBean {
 	private String birthyear;
 	private String classyear;
 	
+	
+	
+	public ProfileBean(String username, 
+			String fullname, 
+			String password,
+			String email,
+			String age,
+			String sex,
+			String orientation,
+			String description,
+			String college,
+			String dorm,
+			String activities,
+			String status,
+			String seeking,
+			String birthday,
+			String birthmonth,
+			String birthyear,
+			String classyear)
+	{
+		 this.username= username; 
+		 this.fullname= fullname; 
+		 this.password= password;
+		 this.email= email;
+		 this.age = age;
+		 this.sex = sex;
+		 this.orientation= orientation;
+		 this.description = description;
+		 this.college = college;
+		 this.dorm = dorm;
+		 this.activities = activities;
+		 this.status = status;
+		 this.seeking = seeking;
+		 this.birthday = birthday;
+		 this.birthmonth = birthmonth;
+		 this.birthyear= birthyear;
+		 this.classyear = classyear;
+		
+	}
+	
+	public ProfileBean() {
+		
+	}
+
 	public void setUsername(String param){
 		this.username = param;
 	}

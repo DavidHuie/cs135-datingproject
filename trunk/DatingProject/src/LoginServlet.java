@@ -46,12 +46,14 @@ public class LoginServlet extends HttpServlet {
 				Cookies.createValidatedUserCookies(response, username, password);
 				
 				// Redirect to homepage
-				response.sendRedirect("/index.html"); // placeholder
+				//response.sendRedirect("/index.html"); // placeholder
+				RequestDispatcher dispatcher = request.getRequestDispatcher("index.html");
+				dispatcher.forward(request,response);
 			} else {
 				// Show login error
 				//response.sendError(403, "Invalid user credentials");
 				//sends the user back to Login Page, this time an error will be displayed.
-				RequestDispatcher dispatcher = request.getRequestDispatcher("Login.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
 				request.setAttribute("Error", true);
 				dispatcher.forward(request,response);
 			
