@@ -4,10 +4,9 @@
  * This is a bean class that stores all of the information from a User's profile
  */
 package Beans;
-import java.util.*;
-import java.io.*;
 public class ProfileBean {
 	private String username;
+	private String fullname;
 	private String password;
 	private String email;
 	private String age;
@@ -15,6 +14,7 @@ public class ProfileBean {
 	private String orientation;
 	private String description;
 	private String college;
+	private String dorm;
 	private String activities;
 	private String status;
 	private String seeking;
@@ -31,6 +31,20 @@ public class ProfileBean {
 	{
 		return(username);
 	}
+	
+	public String getAge()
+	{
+		return(age);
+	}
+	
+	public void setDorm(String param){
+		this.dorm = param;
+	}
+	
+	public String getDorm()
+	{
+		return(dorm);
+	}
 
 	public void setPassword(String param){
 		this.password = param;
@@ -39,6 +53,15 @@ public class ProfileBean {
 	public String getPassword()
 	{
 		return(password);
+	}
+	
+	public void setFullname(String param){
+		this.fullname = param;
+	}
+	
+	public String getFullname()
+	{
+		return(fullname);
 	}
 
 	public void setEmail(String param){

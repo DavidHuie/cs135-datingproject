@@ -33,7 +33,7 @@ public class SearchTools {
 	}
 	
 	public static String test() throws SQLException {
-		ArrayList<QueryableName> x = get_queryable_names_list("mt");
+		ArrayList<QueryableName> x = get_queryable_names_list("mt"); // should return matt as closest
 		return x.remove(0).name;
 	}
 }
