@@ -23,7 +23,51 @@ Results:
 <input type = "hidden" name = "username" value = <jsp:getProperty name = "Profile1" property = "username" /> />
 <input type = "submit" value = "View Profile" />
 </form>
+<br />
+<br />
 
+<jsp:useBean id ="ResultsProfile2" class = "Beans.ProfileBean" scope = "page" />
+<jsp:getProperty name = "ResultsProfile1" property = "username" /><br />
+<form action = ViewProfileServlet">
+<input type = "hidden" name = "username" value = <jsp:getProperty name = "Profile1" property = "username" /> />
+<input type = "submit" value = "View Profile" />
+</form>
+<br />
+<br />
+
+<jsp:useBean id ="ResultsProfile3" class = "Beans.ProfileBean" scope = "page" />
+<jsp:getProperty name = "ResultsProfile1" property = "username" /><br />
+<form action = ViewProfileServlet">
+<input type = "hidden" name = "username" value = <jsp:getProperty name = "Profile1" property = "username" /> />
+<input type = "submit" value = "View Profile" />
+</form>
+
+<jsp:useBean id ="ResultsProfile4" class = "Beans.ProfileBean" scope = "page" />
+<jsp:getProperty name = "ResultsProfile1" property = "username" /><br />
+<form action = ViewProfileServlet">
+<input type = "hidden" name = "username" value = <jsp:getProperty name = "Profile1" property = "username" /> />
+<input type = "submit" value = "View Profile" />
+</form>
+<br />
+<br />
+
+<jsp:useBean id ="ResultsProfile5" class = "Beans.ProfileBean" scope = "page" />
+<jsp:getProperty name = "ResultsProfile1" property = "username" /><br />
+<form action = ViewProfileServlet">
+<input type = "hidden" name = "username" value = <jsp:getProperty name = "Profile1" property = "username" /> />
+<input type = "submit" value = "View Profile" />
+</form>
+<br />
+<br />
+
+<jsp:useBean id ="ResultsProfile6" class = "Beans.ProfileBean" scope = "page" />
+<jsp:getProperty name = "ResultsProfile1" property = "username" /><br />
+<form action = ViewProfileServlet">
+<input type = "hidden" name = "username" value = <jsp:getProperty name = "Profile1" property = "username" /> />
+<input type = "submit" value = "View Profile" />
+</form>
+<br />
+<br />
 
 
 </body>

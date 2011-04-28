@@ -51,10 +51,11 @@ public class ViewProfileServlet extends HttpServlet {
 		String username= request.getParameter("username");
 		try{
 		ProfileBean viewBean = database.CreateBean.createBeanFromDB(username);
-		ServletContext scontext = getServletContext();
+		ServletConfig sconfig = getServletConfig();
+		ServletContext scontext = sconfig.getServletContext();
 		scontext.setAttribute("currentProfile", viewBean);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/ViewProfile.jsp");
-		dispatcher.forward(request, response);
+		response.sendRedirect("ViewProfile.jsp");
+		
 		
 		}
 		 catch (SQLException e) {

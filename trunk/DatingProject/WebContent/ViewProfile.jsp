@@ -9,10 +9,10 @@
 <body>
 Welcome to your profile.
 <jsp:useBean id ="currentProfile" class = "Beans.ProfileBean" scope = "application">
-<jsp:getProperty name = "currentProfile" property = "username" />
-<jsp:getProperty name = "currentProfile" property = "fullname" />
-<jsp:getProperty name = "currentProfile" property = "email" />
-<jsp:getProperty name = "currentProfile" property = "age" />
+<jsp:getProperty name = "currentProfile" property = "username" /><br />
+<jsp:getProperty name = "currentProfile" property = "fullname" /><br />
+<jsp:getProperty name = "currentProfile" property = "email" /><br />
+<jsp:getProperty name = "currentProfile" property = "age" /><br />
 <jsp:getProperty name = "currentProfile" property = "birthmonth" />
 <jsp:getProperty name = "currentProfile" property = "birthday" />
 <jsp:getProperty name = "currentProfile" property = "birthyear" />

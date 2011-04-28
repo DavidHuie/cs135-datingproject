@@ -59,3 +59,22 @@ INSERT INTO main(
 	seeking,
 	college
 ) VALUES ("david", "David Huie", "ihatecmc", "dahuie@gmail.com", "22", "Senior", "Male", "Straight", "Happy dude looking for love", "Linde", "hiking", "getting my code on", "Jan", "17", "1989", "LOVE", "Harvey Mudd");
+INSERT INTO main(
+	username,
+	fullname,
+	password,
+	email,
+	age,
+	classyear,
+	sex,
+	orientation,
+	description,
+	dorm,
+	activities,
+	status,
+	birthday,
+	birthmonth,
+	birthyear,
+	seeking,
+	college
+) VALUES ("bryce", "Bryce Gerard", "bryce", "bgerard11@cmc.edu", "22", "Senior", "Male", "Straight", "", "Linde", "hiking", "getting my code on", "Jan", "17", "1989", "LOVE", "Harvey Mudd");

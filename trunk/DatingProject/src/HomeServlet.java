@@ -48,10 +48,11 @@ public class HomeServlet extends HttpServlet {
 		System.out.println("Home Username is" +username);
 		try{
 		ProfileBean userprofile = database.CreateBean.createBeanFromDB(username);
+		ServletConfig sconfig = getServletConfig();
 		ServletContext scontext = sconfig.getServletContext();
-		scontext.setAttribute("userProfileBean", userprofile);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/homePage.jsp");
-		dispatcher.forward(request, response);
+		scontext.setAttribute("currentProfile", userprofile);
+		response.sendRedirect("homePage.jsp");
+		
 		}
 		catch (SQLException e){
 		e.printStackTrace();
