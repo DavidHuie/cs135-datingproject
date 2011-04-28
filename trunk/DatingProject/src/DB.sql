@@ -31,8 +31,8 @@ CREATE TABLE main(
 CREATE TABLE messages(
 	sender VARCHAR(255),
 	recipient VARCHAR(255),
-	message_body VARCHAR(65535),
-	time_stamp DATE,
+	message_body VARCHAR(6535),
+	time_stamp DATE
 );
 
-INSERT INTO main (username, password) VALUES("administrator", "administrator");
+INSERT INTO main (username, fullname, password) VALUES("administrator", "admin administrator", "administrator");
