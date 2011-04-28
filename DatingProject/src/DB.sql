@@ -19,6 +19,7 @@ CREATE TABLE main(
 	orientation VARCHAR(255),
 	description VARCHAR(1024),
 	dorm VARCHAR(255),
+	college VARCHAR(255),
 	activities VARCHAR(1024),
 	status VARCHAR(255),
 	birthday VARCHAR(255),
@@ -55,5 +56,6 @@ INSERT INTO main(
 	birthday,
 	birthmonth,
 	birthyear,
-	seeking
-) VALUES ("david", "David Huie", "ihatecmc", "dahuie@gmail.com", "22", "Senior", "Male", "Straight", "Happy dude looking for love", "Linde", "hiking", "getting my code on", "Jan", "17", "1989", "LOVE")
+	seeking,
+	college
+) VALUES ("david", "David Huie", "ihatecmc", "dahuie@gmail.com", "22", "Senior", "Male", "Straight", "Happy dude looking for love", "Linde", "hiking", "getting my code on", "Jan", "17", "1989", "LOVE", "Harvey Mudd")
