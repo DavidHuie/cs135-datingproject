@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registration</title>
 </head>
-<body>
+<body style="background-color:pink">
 <h1>Register Here</h1>
 <%@ taglib uri ="WEB-INF/tlds/csajsp-taglib.tld" 
 prefix = "cupid" %>

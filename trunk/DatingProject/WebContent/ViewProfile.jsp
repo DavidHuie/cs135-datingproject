@@ -7,10 +7,12 @@
 <title>View Profile</title>
 </head>
 <body>
-<jsp:useBean id ="currentProfile" class = "Beans.ProfileBean" scope = Application>
+Welcome to your profile.
+<jsp:useBean id ="currentProfile" class = "Beans.ProfileBean" scope = application>
 
 
-
+</BODY>
+</HTML>
 
 </jsp:useBean>
 </body>

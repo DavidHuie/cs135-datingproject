@@ -71,7 +71,7 @@
 			<option value="1992">1992</option>
 			<option value="1993">1993</option>
 		</select><br /> 
-		School: <select name="mydropdown">
+		School: <select name="school">
 		<option value="none" selected="selected">--None--</option>
 			<option value="cmc">Claremont McKenna</option>
 			<option value="hmc">Harvey Mudd</option>
