@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Register Here</h1>
-<%@ taglib uri ="/WEB-INF/tlds/cupid-taglib.tld" 
+<%@ taglib uri ="WEB-INF/tlds/csajsp-taglib.tld" 
 prefix = "cupid" %>
 <br>Choose A User Name and Password<br/>
 <form action = "RegistrationServlet" method = "post">
