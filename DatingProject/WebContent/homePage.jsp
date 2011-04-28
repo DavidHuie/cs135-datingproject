@@ -5,15 +5,17 @@
 <title>home page</title>
 </head>
 <body>
+
 <%@ taglib uri="WEB-INF/tlds/csajsp-taglib.tld" 
 prefix="csajsp" %>
 
 <h1>Welcome to Claremont Cupid <csajsp:printName />!</h1>
+
 	Browse around...<br />
 	
 	Edit your profile <a href="editProfile.jsp">here!</a><br />
 	Check out your profile <a href="ViewProfile.jsp">here!</a><br />
-	Check out other people's profile <a href="OtherProfiles.jsp">here!</a><br />
+	Check out other people's profile <a href="ViewOtherProfiles.jsp">here!</a><br />
   	<br>
   	<a href="Logout.jsp">Logout.</a>
 </body>

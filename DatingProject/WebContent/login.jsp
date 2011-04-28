@@ -6,9 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login</title>
 </head>
-<body>
+<body style="background-color:pink">
 <h1>Login below</h1>
-
 <form action="LoginServlet" method="post">
 User Name: <input type="text" name="username"><br/>
 Password: <input type="password" name="password"><br/>
