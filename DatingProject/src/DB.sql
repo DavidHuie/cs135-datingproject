@@ -58,4 +58,4 @@ INSERT INTO main(
 	birthyear,
 	seeking,
 	college
-) VALUES ("david", "David Huie", "ihatecmc", "dahuie@gmail.com", "22", "Senior", "Male", "Straight", "Happy dude looking for love", "Linde", "hiking", "getting my code on", "Jan", "17", "1989", "LOVE", "Harvey Mudd")
+) VALUES ("david", "David Huie", "ihatecmc", "dahuie@gmail.com", "22", "Senior", "Male", "Straight", "Happy dude looking for love", "Linde", "hiking", "getting my code on", "Jan", "17", "1989", "LOVE", "Harvey Mudd");

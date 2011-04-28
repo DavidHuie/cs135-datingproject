@@ -1,5 +1,6 @@
 package database;
 import Beans.*;
+
 import java.sql.*;
 import java.util.*;
 
@@ -24,7 +25,9 @@ public class CreateBean {
 		ResultSet resultset = statement.executeQuery("query");
 		bean.setUsername(username);
 		bean.setPassword(resultset.getString("password"));
+		bean.setFullname(resultset.getString("fullname"));
 		bean.setEmail(resultset.getString("email"));
+		bean.setOrientation(resultset.getString("orientation"));
 		bean.setActivities(resultset.getString("activities"));
 		bean.setAge(resultset.getString("age"));
 		bean.setBirthday(resultset.getString("birthday"));

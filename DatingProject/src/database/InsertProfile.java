@@ -1,0 +1,82 @@
+package database;
+import java.util.*;
+import java.sql.*;
+
+import Beans.*;
+import login_utilities.*;
+public class InsertProfile {
+	/**
+	 * @author Bryce Gerard
+	 * @description inserts a new 
+	 */
+	public static void InsertBean(ProfileBean bean)
+	{
+		String username = bean.getUsername();
+		String fullname = bean.getFullname();
+		String password = bean.getPassword();
+		String email = bean.getEmail();
+		String age = bean.getAge();
+		String sex = bean.getSex();
+		String orientation= bean.getOrientation();
+		String description = bean.getDescription();
+		String college = bean.getCollege();
+		String dorm = bean.getDorm();
+		String activities = bean.getActivities();
+		String status = bean.getStatus();
+		String seeking = bean.getSeeking();
+		String birthday = bean.getBirthday();
+		String birthmonth = bean.getBirthmonth();
+		String birthyear = bean.getBirthyear();
+		String classyear = bean.getClassyear();
+		try {
+			String query;
+			boolean isOld = login_utilities.UserAuthentication.usernameExists(username);
+			Connection connection = AccessDB.openconnection();
+			Statement statement = connection.createStatement();
+			if(isOld){
+			query = "DELETE FROM main IF username =\'"+username+"\';";
+			statement.executeUpdate(query);
+			}
+			query = "INSERT INTO main(username, " +
+					"fullname, "+
+					"password, "+
+					"email, "+
+					"age, "+
+					"classyear, "+
+					"sex, "+
+					"orientation, "+
+					"description, "+
+					"dorm, "+
+					"activities, "+
+					"status, " +
+					"birthday, " +
+					"birthmonth, "+
+					"birthyear, " +
+					"seeking, " +
+					"college) "+
+					"VALUES("+
+					"\""+username+"\", "+
+					"\""+fullname+"\", "+ 
+					"\""+email+"\", "+ 
+					"\""+age+"\", "+ 
+					"\""+classyear+"\", "+ 
+					"\""+sex+"\", "+ 
+					"\""+orientation+"\", "+ 
+					"\""+description+"\", "+ 
+					"\""+activities+"\", "+ 
+					"\""+status+"\", " +
+					"\""+birthday+"\", "+ 
+					"\""+birthmonth+"\", "+ 
+					"\""+seeking+"\", "+
+					"\""+college+"\")";
+			statement.executeUpdate(query);
+			
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+}

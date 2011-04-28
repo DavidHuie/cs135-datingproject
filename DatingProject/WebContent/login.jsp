@@ -9,8 +9,8 @@
 <body style="background-color:pink">
 <h1>Login below</h1>
 <form action="LoginServlet" method="post">
-User Name: <input type="text" name="username"><br/>
-Password: <input type="password" name="password"><br/>
+User Name: <input type="text" name="username" /><br/>
+Password: <input type="password" name="password" /><br/>
 <input type="submit" value= "Log In">
 </form>
 <%@ taglib uri="WEB-INF/tlds/csajsp-taglib.tld" 
