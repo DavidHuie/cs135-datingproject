@@ -10,10 +10,21 @@
 Welcome to your profile.
 <jsp:useBean id ="currentProfile" class = "Beans.ProfileBean" scope = application>
 <jsp:getProperty name = "currentProfile" property = "username" />
-<jsp:getProperty name = "currentProfile" property = "sex" />
+<jsp:getProperty name = "currentProfile" property = "fullname" />
+<jsp:getProperty name = "currentProfile" property = "email" />
 <jsp:getProperty name = "currentProfile" property = "age" />
-<jsp:getProperty name = "currentProfile" property = "college" />
+<jsp:getProperty name = "currentProfile" property = "birthmonth" />
+<jsp:getProperty name = "currentProfile" property = "birthday" />
+<jsp:getProperty name = "currentProfile" property = "birthyear" />
+<jsp:getProperty name = "currentProfile" property = "classyear" />
+<jsp:getProperty name = "currentProfile" property = "sex" />
 <jsp:getProperty name = "currentProfile" property = "orientation" />
+<jsp:getProperty name = "currentProfile" property = "status" />
+<jsp:getProperty name = "currentProfile" property = "seeking" />
+<jsp:getProperty name = "currentProfile" property = "college" />
+<jsp:getProperty name = "currentProfile" property = "dorm" />
+<jsp:getProperty name = "currentProfile" property = "description" />
+<jsp:getProperty name = "currentProfile" property = "activities" />
 
 
 </jsp:useBean>
