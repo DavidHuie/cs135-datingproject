@@ -1,6 +1,6 @@
 package login_utilities;
 
-import java.sql.ResultSet;
+import java.sql.*;
 import java.sql.SQLException;
 import database.AccessDB;
 
@@ -25,16 +25,18 @@ public class UserAuthentication {
 	}
 	
 	public static Boolean usernameExists(String username) throws SQLException {
-		String query = "SELECT username FROM main WHERE username = \'" + username + "\'";
+		String query = "SELECT username FROM main WHERE username = \'" + username + "\';";
 		ResultSet result = AccessDB.get_result_set(query);
 		
 		// This is valid because next() returns a boolean
+		//just remember that result.next also iterates the set forward ;)
 		return result.next();
 	}
 	
 	public static Boolean validatePassword(String username, String password) throws SQLException {
-		String query = "SELECT password FROM main WHERE main.username = \"" + username + "\"";
+		String query = "SELECT password FROM main WHERE username =\'" + username + "\';";
 		ResultSet result = AccessDB.get_result_set(query);
+		result.next();
 		String db_password = result.getString("password");
 		return password.equals(db_password);
 	}

@@ -39,17 +39,17 @@ public class LoginServlet extends HttpServlet {
 		// get parameters and filter them
 		String username = ServletUtilities.filter(request.getParameter("username"));
 		String password = ServletUtilities.filter(request.getParameter("password"));
-		System.out.println("gotherefirst");
+		System.out.println("Login Username is" +username);
 		// add cookies to response
 		try {
 			if (UserAuthentication.authenticate_login(username, password)){
 				Cookies.createValidatedUserCookies(response, username, password);
-				
+				System.out.println("Cookie Username should be" +username);
 				// Redirect to homepage
 				//response.sendRedirect("/index.html"); // placeholder
 				System.out.println("gothere");
-				RequestDispatcher dispatcher = request.getRequestDispatcher("index.html");
-				dispatcher.forward(request,response);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/HomeServlet");
+				dispatcher.forward(request, response);
 			} else {
 				// Show login error
 				//response.sendError(403, "Invalid user credentials");
