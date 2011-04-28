@@ -15,6 +15,13 @@
   </tag>
   
   <tag>
+  	<description>Outputs name of logged in user</description>
+  	<name>printName</name>
+  	<tag-class>coreservlets.tags.nameTag</tag-class>
+  	<body-content>empty</body-content>
+  </tag>
+  
+  <tag>
     <description>Outputs an N-digit prime</description>
     <name>prime</name>
     <tag-class>coreservlets.tags.PrimeTag</tag-class>

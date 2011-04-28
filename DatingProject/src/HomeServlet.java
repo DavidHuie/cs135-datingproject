@@ -52,7 +52,7 @@ public class HomeServlet extends HttpServlet {
 		ProfileBean userprofile = database.CreateBean.createBeanFromDB(username);
 		ServletContext scontext = sconfig.getServletContext();
 		scontext.setAttribute("userprofilebean", userprofile);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/Home.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/homePage.jsp");
 		dispatcher.forward(request, response);
 		}
 		catch (SQLException e){
