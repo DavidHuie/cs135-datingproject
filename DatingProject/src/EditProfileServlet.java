@@ -57,6 +57,7 @@ public class EditProfileServlet extends HttpServlet {
 				ServletContext scontext = sconfig.getServletContext();
 				scontext.setAttribute("userProfileBean", newBean);
 				scontext.setAttribute("currentProfile", newBean);*/
+				request.setAttribute("username",newBean.getUsername());
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/ViewProfile.jsp");
 				dispatcher.forward(request, response);
 	

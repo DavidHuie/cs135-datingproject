@@ -1,9 +1,9 @@
 package search;
 
 public class QueryableName implements Comparable<QueryableName>{
-	String name;
-	String username;
-	String query;
+	 public String name;
+	 public String username;
+	 public String query;
 	
 	public QueryableName(String name, String username, String query) {
 		this.name = name;
