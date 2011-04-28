@@ -15,7 +15,7 @@ public class Cookies {
 	// This function adds cookies for a logged-in user
 	public static void createValidatedUserCookies(HttpServletResponse response, String username, String password) {
 		Cookie userCookie = new Cookie(cookiePrefix + usernameSuffix, username);
-		Cookie passwordCookie = new Cookie(cookiePrefix + usernameSuffix, password);
+		Cookie passwordCookie = new Cookie(cookiePrefix + passwordSuffix, password);
 		
 		response.addCookie(userCookie);
 		response.addCookie(passwordCookie);
@@ -25,7 +25,7 @@ public class Cookies {
 	// Erases a users logged-in cookies
 	public static void clearUserCookies(HttpServletResponse response) {
 		Cookie userCookie = new Cookie(cookiePrefix + usernameSuffix, null);
-		Cookie passwordCookie = new Cookie(cookiePrefix + usernameSuffix, null);
+		Cookie passwordCookie = new Cookie(cookiePrefix + passwordSuffix, null);
 		
 		// Set max age to 0 so cookies are deleted
 		userCookie.setMaxAge(0);

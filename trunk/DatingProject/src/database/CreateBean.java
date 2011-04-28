@@ -21,8 +21,10 @@ public class CreateBean {
 		ProfileBean bean = new ProfileBean();
 		Connection connection = AccessDB.openconnection();
 		Statement statement = connection.createStatement();
+		System.out.println("username at CreateBean is " +username);
 		String query = "SELECT * FROM main WHERE username=\'"+username+"\';";
-		ResultSet resultset = statement.executeQuery("query");
+		ResultSet resultset = statement.executeQuery(query);
+		resultset.next();
 		bean.setUsername(username);
 		bean.setPassword(resultset.getString("password"));
 		bean.setFullname(resultset.getString("fullname"));

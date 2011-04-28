@@ -48,6 +48,7 @@ public class HomeServlet extends HttpServlet {
 		String Cookiename = login_utilities.Cookies.cookiePrefix + login_utilities.Cookies.usernameSuffix;
 		Cookie usercookie = coreservlets.CookieUtilities.getCookie(request, "claremontcupidusername");
 		String username = usercookie.getValue();
+		System.out.println("Home Username is" +username);
 		try{
 		ProfileBean userprofile = database.CreateBean.createBeanFromDB(username);
 		ServletContext scontext = sconfig.getServletContext();
