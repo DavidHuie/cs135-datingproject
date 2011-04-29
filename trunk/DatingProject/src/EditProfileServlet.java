@@ -35,31 +35,32 @@ public class EditProfileServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProfileBean newBean = new ProfileBean(request.getParameter("username"), 
-				request.getParameter("fullnametext"), 
-				request.getParameter("passwordtext"), 
-				request.getParameter("emailtext"), 
-				request.getParameter("agetext"),
-				request.getParameter("sextext"),
-				request.getParameter("orientationtext"),
-				request.getParameter("descriptiontext"),
-				request.getParameter("collegetext"),
-				request.getParameter("dormtext"),
-				request.getParameter("activitiestext"),
-				request.getParameter("statustext"), 
-				request.getParameter("seekingtext"),
-				request.getParameter("birthdaytext"),
-				request.getParameter("birthmonthtext"),
-				request.getParameter("birthyeartext"),
-				request.getParameter("classyeartext"));
+				request.getParameter("fullname"), 
+				request.getParameter("password"), 
+				request.getParameter("email"), 
+				request.getParameter("age"),
+				request.getParameter("sex"),
+				request.getParameter("orientation"),
+				request.getParameter("description"),
+				request.getParameter("college"),
+				request.getParameter("dorm"),
+				request.getParameter("activities"),
+				request.getParameter("status"), 
+				request.getParameter("seeking"),
+				request.getParameter("birthday"),
+				request.getParameter("birthmonth"),
+				request.getParameter("birthyear"),
+				request.getParameter("classyear"));
 				database.InsertProfile.InsertBean(newBean);
 				//maybe don't need this code, we'll see.
 				/*ServletConfig sconfig = getServletConfig();
 				ServletContext scontext = sconfig.getServletContext();
 				scontext.setAttribute("userProfileBean", newBean);
 				scontext.setAttribute("currentProfile", newBean);*/
-				request.setAttribute("username",newBean.getUsername());
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/ViewProfile.jsp");
-				dispatcher.forward(request, response);
+				System.out.println("username at edit is " +newBean.getUsername());
+				getServletContext().setAttribute("username",newBean.getUsername());
+				response.sendRedirect("ViewProfileServlet");
+				
 	
 	
 	}

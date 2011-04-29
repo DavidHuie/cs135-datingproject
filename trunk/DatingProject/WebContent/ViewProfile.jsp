@@ -8,25 +8,25 @@
 </head>
 <body>
 Welcome to your profile.
-<jsp:useBean id ="currentProfile" class = "Beans.ProfileBean" scope = "application">
+<jsp:useBean id ="currentProfile" type = "Beans.ProfileBean" scope = "application" />
 <jsp:getProperty name = "currentProfile" property = "username" /><br />
 <jsp:getProperty name = "currentProfile" property = "fullname" /><br />
 <jsp:getProperty name = "currentProfile" property = "email" /><br />
 <jsp:getProperty name = "currentProfile" property = "age" /><br />
-<jsp:getProperty name = "currentProfile" property = "birthmonth" />
-<jsp:getProperty name = "currentProfile" property = "birthday" />
-<jsp:getProperty name = "currentProfile" property = "birthyear" />
-<jsp:getProperty name = "currentProfile" property = "classyear" />
-<jsp:getProperty name = "currentProfile" property = "sex" />
-<jsp:getProperty name = "currentProfile" property = "orientation" />
-<jsp:getProperty name = "currentProfile" property = "status" />
-<jsp:getProperty name = "currentProfile" property = "seeking" />
-<jsp:getProperty name = "currentProfile" property = "college" />
-<jsp:getProperty name = "currentProfile" property = "dorm" />
-<jsp:getProperty name = "currentProfile" property = "description" />
-<jsp:getProperty name = "currentProfile" property = "activities" />
+<jsp:getProperty name = "currentProfile" property = "birthmonth" /><br />
+<jsp:getProperty name = "currentProfile" property = "birthday" /><br />
+<jsp:getProperty name = "currentProfile" property = "birthyear" /><br />
+<jsp:getProperty name = "currentProfile" property = "classyear" /><br />
+<jsp:getProperty name = "currentProfile" property = "sex" /><br />
+<jsp:getProperty name = "currentProfile" property = "orientation" /><br />
+<jsp:getProperty name = "currentProfile" property = "status" /><br />
+<jsp:getProperty name = "currentProfile" property = "seeking" /><br />
+<jsp:getProperty name = "currentProfile" property = "college" /><br />
+<jsp:getProperty name = "currentProfile" property = "dorm" /><br />
+<jsp:getProperty name = "currentProfile" property = "description" /><br />
+<jsp:getProperty name = "currentProfile" property = "activities" /><br />
 
 
-</jsp:useBean>
+
 </body>
 </html>

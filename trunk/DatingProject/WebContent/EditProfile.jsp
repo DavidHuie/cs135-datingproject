@@ -10,114 +10,114 @@
 <body>
 Current Profile Info:
 <textarea disabled = "disabled">Hello Everybody</textarea>
-<jsp:useBean id ="userProfileBean" class = "Beans.ProfileBean" scope = "application">
-<form action = >
-<textarea id = "usernametext" rows = "3" cols = "35" disabled = "disabled">
+<jsp:useBean id ="userProfileBean" class = "Beans.ProfileBean" scope = "application" />
+<form action = "EditProfileServlet">
+<textarea id = "usernametext" name = "username" rows = "3" cols = "35" >
 <jsp:getProperty name = "userProfileBean" property = "username" />
 </textarea>
 <br />
 <button id = "username" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 
-<textarea id = "fullnametext" rows = "3" cols = "35" disabled = "disabled">
+<textarea id = "fullnametext" name = "fullname" rows = "3" cols = "35">
 <jsp:getProperty name = "userProfileBean" property = "fullname" />
 </textarea>
 <br />
 <button id = "fullname" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 
-<textarea id = "emailtext" rows = "3" cols = "35" disabled = "disabled">
+<textarea id = "emailtext" name = "email" rows = "3" cols = "35">
 <jsp:getProperty name = "userProfileBean" property = "email" />
 </textarea>
 <br />
 <button id = "email" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 
-<textarea id = "agetext" rows = "3" cols = "35" disabled = "disabled">
+<textarea id = "agetext" name = "age" rows = "3" cols = "35" >
 <jsp:getProperty name = "userProfileBean" property = "age" />
 </textarea><br />
 <button id = "age" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 
-<textarea id = "birthmonthtext" rows = "3" cols = "35" disabled = "disabled"> 
+<textarea id = "birthmonthtext" name = "birthmonth" rows = "3" cols = "35" > 
 <jsp:getProperty name = "userProfileBean" property = "birthmonth" />
 </textarea><br />
 <button id = "birthmonth" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 
-<textarea id = "birthmonthtext" rows = "3" cols = "35" disabled = "disabled"> 
+<textarea id = "birthdaytext" name = "birthday" rows = "3" cols = "35"> 
 <jsp:getProperty name = "userProfileBean" property = "birthday" />
 </textarea>
-<button id = "birthmonth" onclick = "DatingApp.editButton(this.id)">Edit</button>
+<button id = "birthday" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 
 
-<textarea id = "birthyeartext" rows = "3" cols = "35" disabled = "disabled">
+<textarea id = "birthyeartext" name = "birthyear"  rows = "3" cols = "35" >
 <jsp:getProperty name = "userProfileBean" property = "birthyear" />
 </textarea>
 <button id = "birthyear" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 
-<textarea id = "classyeartext" rows = "3" cols = "35" disabled = "disabled">
+<textarea id = "classyeartext" name = "classyear" rows = "3" cols = "35" >
 <jsp:getProperty name = "userProfileBean" property = "classyear" />
 </textarea>
 <button id = "classyear" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 
-<textarea id = "sextext" rows = "3" cols = "35" disabled = "disabled">
+<textarea id = "sextext" name = "sex" rows = "3" cols = "35" >
 <jsp:getProperty name = "userProfileBean" property = "sex" />
 </textarea>
 <button id = "sex" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 
-<textarea id= "orientationtext" rows = "3" cols = "35" disabled = "disabled">
+<textarea id= "orientationtext" name = "orientation" rows = "3" cols = "35">
 <jsp:getProperty name = "userProfileBean" property = "orientation" />
 </textarea>
 <button id = "orientation" onclick = "DatingApp.editButton(this.id)">Edit</button>
 
-<textarea id= "statustext" rows = "3" cols = "35" disabled = "disabled">
+<textarea id= "statustext" name = "status" rows = "3" cols = "35">
 <jsp:getProperty name = "userProfileBean" property = "status" />
 </textarea> <br />
 <button id = "status" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 
 
-<textarea id = "seekingtext" rows = "3" cols = "35" disabled = "disabled">
+<textarea id = "seekingtext" name = "seeking" rows = "3" cols = "35">
 <jsp:getProperty name = "userProfileBean" property = "seeking" /><br />
 </textarea><br />
 <button id = "seeking" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 
-<textarea id = "collegetext" rows = "3" cols = "35" disabled = "disabled">
+<textarea id = "collegetext" name = "college" rows = "3" cols = "35" >
 <jsp:getProperty name = "userProfileBean" property = "college" />
 </textarea>
 <br />
 <button id = "college" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 
-<textarea id = "dormtext" rows = "3" cols = "35" disabled = "disabled">
+<textarea id = "dormtext" name = "dorm" rows = "3" cols = "35" >
 <jsp:getProperty name = "userProfileBean" property = "dorm" />
 </textarea>
 <br />
 <button id = "dorm" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 
-<textarea id = "descriptiontext" rows = "3" cols = "35" disabled = "disabled">
+<textarea id = "descriptiontext" name = "description" rows = "3" cols = "35" >
 <jsp:getProperty name = "userProfileBean" property = "description" />
 </textarea>
 <br />
 <button id = "description" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 
-<textarea id = "activitiestext" rows = "3" cols = "35" disabled = "disabled">
+<textarea id = "activitiestext" name = "activities" rows = "3" cols = "35" >
 <jsp:getProperty name = "userProfileBean" property = "activities" />
 </textarea>
 <br />
 <button id = "activities" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
+<input type ="submit" value = "Submit">
 </form>
 
-</jsp:useBean>
 
 </body>
 </html>
