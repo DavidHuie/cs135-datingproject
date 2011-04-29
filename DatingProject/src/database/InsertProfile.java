@@ -58,15 +58,18 @@ public class InsertProfile {
 					"\""+username+"\", "+
 					"\""+fullname+"\", "+ 
 					"\""+email+"\", "+ 
+					"\""+password+"\", "+ 
 					"\""+age+"\", "+ 
 					"\""+classyear+"\", "+ 
 					"\""+sex+"\", "+ 
 					"\""+orientation+"\", "+ 
 					"\""+description+"\", "+ 
+					"\""+dorm+"\", "+ 
 					"\""+activities+"\", "+ 
 					"\""+status+"\", " +
 					"\""+birthday+"\", "+ 
 					"\""+birthmonth+"\", "+ 
+					"\""+birthyear+"\", "+ 
 					"\""+seeking+"\", "+
 					"\""+college+"\")";
 			statement.executeUpdate(query);

@@ -22,9 +22,11 @@ public class CreateBean {
 		Connection connection = AccessDB.openconnection();
 		Statement statement = connection.createStatement();
 		System.out.println("username at CreateBean is " +username);
-		String query = "SELECT * FROM main WHERE username=\'"+username+"\';";
+		String query = "SELECT * FROM main WHERE username=\'"
+			+username+"\';";
 		ResultSet resultset = statement.executeQuery(query);
 		resultset.next();
+		System.out.println("query at CreateBean is " +query);
 		bean.setUsername(username);
 		bean.setPassword(resultset.getString("password"));
 		bean.setFullname(resultset.getString("fullname"));
@@ -41,6 +43,7 @@ public class CreateBean {
 		bean.setStatus(resultset.getString("status"));
 		bean.setClassyear(resultset.getString("classyear"));
 		bean.setSeeking(resultset.getString("seeking"));
+		bean.setDorm(resultset.getString("dorm"));
 		return bean;
 		
 		
