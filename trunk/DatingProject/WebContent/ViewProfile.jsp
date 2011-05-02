@@ -8,6 +8,7 @@
 </head>
 <body>
 Welcome to your profile.
+
 <jsp:useBean id ="currentProfile" type = "Beans.ProfileBean" scope = "application" />
 <jsp:getProperty name = "currentProfile" property = "username" /><br />
 <jsp:getProperty name = "currentProfile" property = "fullname" /><br />

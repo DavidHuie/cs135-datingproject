@@ -4,6 +4,7 @@ public class QueryableName implements Comparable<QueryableName>{
 	 public String name;
 	 public String username;
 	 public String query;
+	 public int score;
 	
 	public QueryableName(String name, String username, String query) {
 		this.name = name;
@@ -12,7 +13,9 @@ public class QueryableName implements Comparable<QueryableName>{
 	}
 	
 	public int compareTo(QueryableName name) {
-		return LevenshteinDistanceMetric.distance(this.name, this.query) -
+		this.score = LevenshteinDistanceMetric.distance(this.name, this.query) -
 		LevenshteinDistanceMetric.distance(name.name, name.query);
+		
+		return this.score;
 	}
 }
