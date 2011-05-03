@@ -9,7 +9,7 @@
 </head>
 <body>
 Current Profile Info:
-<textarea readonly = "true">Hello Everybody</textarea>
+
 <jsp:useBean id ="userProfile" class = "Beans.ProfileBean" scope = "application" />
 <form action = "EditProfileServlet">
 <b>User Name</b><br />
@@ -56,7 +56,7 @@ Current Profile Info:
 <b>birth day</b><br />
 <textarea id = "birthdaytext" name = "birthday" rows = "3" cols = "35" readonly = true> 
 <jsp:getProperty name = "userProfile" property = "birthday" />
-</textarea>
+</textarea><br />
 <button type ="button" id = "birthday" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 <br />
@@ -101,7 +101,7 @@ Current Profile Info:
 
 <b>seeking</b><br />
 <textarea id = "seekingtext" name = "seeking" rows = "3" cols = "35" readonly = true>
-<jsp:getProperty name = "userProfile" property = "seeking" /><br />
+<jsp:getProperty name = "userProfile" property = "seeking" />
 </textarea><br />
 <button type ="button" id = "seeking" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
