@@ -49,7 +49,7 @@ public class ViewProfileServlet extends HttpServlet {
 		//then it needs to figure out the username of the profile that it will be viewing.
 		//with that information, it can then view the profile.
 		String username= (String)getServletContext().getAttribute("username");
-		System.out.println("username at ViewServlet is" + username);
+		System.out.println("username at ViewProfileServlet is" + username);
 		try{
 		ProfileBean viewBean = database.CreateBean.createBeanFromDB(username);
 		//ServletConfig sconfig = getServletConfig();

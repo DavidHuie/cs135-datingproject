@@ -8,7 +8,9 @@ import login_utilities.*;
 public class InsertProfile {
 	/**
 	 * @author Bryce Gerard
-	 * @description inserts a new 
+	 * @description inserts a new profile, or an edit of an existing profile into the database.
+	 * @param pw insert the password here if you are creating a brand new account. Otherwise, just use any string, 
+	 * and the program will take care of it.
 	 */
 	public static void InsertBean(ProfileBean bean, String pw)
 	{
@@ -36,7 +38,7 @@ public class InsertProfile {
 			Statement statement = connection.createStatement();
 			if(isOld){
 			password = login_utilities.UserAuthentication.getPassword(username);	
-			query = "DELETE FROM main IF username =\'"+username+"\';";
+			query = "DELETE FROM main WHERE username =\'"+username+"\';";
 			statement.executeUpdate(query);
 			}
 			query = "INSERT INTO main(username, " +

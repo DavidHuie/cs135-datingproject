@@ -1,4 +1,5 @@
 import java.sql.SQLException;
+
 import java.util.*;
 import java.io.*;
 import javax.servlet.*;
@@ -6,7 +7,7 @@ import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 
 import com.sun.corba.se.impl.protocol.giopmsgheaders.RequestMessage;
-
+import coreservlets.*;
 import Beans.*;
 import database.*;
 /**
@@ -52,8 +53,13 @@ public class EditProfileServlet extends HttpServlet {
 				request.getParameter("birthyear"),
 				request.getParameter("classyear"));
 				String username = request.getParameter("username");
+				ServletContext scontext = getServletContext();
+				scontext.setAttribute("currentProfile", newBean);
+				scontext.setAttribute("userProfile", newBean);
 				try{
 				String password = login_utilities.UserAuthentication.getPassword(username);
+				System.out.println("fullname of newBean @ edit: " + newBean.getFullname()+ " email: "+
+						newBean.getEmail());
 				database.InsertProfile.InsertBean(newBean, password);
 				}
 				catch (SQLException e) {
