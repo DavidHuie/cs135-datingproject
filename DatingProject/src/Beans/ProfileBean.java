@@ -7,7 +7,6 @@ package Beans;
 public class ProfileBean {
 	private String username;
 	private String fullname;
-	private String password;
 	private String email;
 	private String age;
 	private String sex;
@@ -27,7 +26,6 @@ public class ProfileBean {
 	
 	public ProfileBean(String username, 
 			String fullname, 
-			String password,
 			String email,
 			String age,
 			String sex,
@@ -45,7 +43,6 @@ public class ProfileBean {
 	{
 		 this.username= username; 
 		 this.fullname= fullname; 
-		 this.password= password;
 		 this.email= email;
 		 this.age = age;
 		 this.sex = sex;
@@ -89,15 +86,6 @@ public class ProfileBean {
 		return(dorm);
 	}
 
-	public void setPassword(String param){
-		this.password = param;
-	}
-	
-	public String getPassword()
-	{
-		return(password);
-	}
-	
 	public void setFullname(String param){
 		this.fullname = param;
 	}

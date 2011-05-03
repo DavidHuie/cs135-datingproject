@@ -1,5 +1,6 @@
 package database;
 import java.util.*;
+
 import java.sql.*;
 
 import Beans.*;
@@ -9,13 +10,13 @@ public class InsertProfile {
 	 * @author Bryce Gerard
 	 * @description inserts a new 
 	 */
-	public static void InsertBean(ProfileBean bean)
+	public static void InsertBean(ProfileBean bean, String pw)
 	{
 		String username = bean.getUsername();
 		String fullname = bean.getFullname();
-		String password = bean.getPassword();
 		String email = bean.getEmail();
 		String age = bean.getAge();
+		String password = pw;
 		String sex = bean.getSex();
 		String orientation= bean.getOrientation();
 		String description = bean.getDescription();
@@ -34,6 +35,7 @@ public class InsertProfile {
 			Connection connection = AccessDB.openconnection();
 			Statement statement = connection.createStatement();
 			if(isOld){
+			password = login_utilities.UserAuthentication.getPassword(username);	
 			query = "DELETE FROM main IF username =\'"+username+"\';";
 			statement.executeUpdate(query);
 			}

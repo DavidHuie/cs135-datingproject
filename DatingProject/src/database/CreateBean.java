@@ -28,8 +28,6 @@ public class CreateBean {
 		resultset.next();
 		System.out.println("query at CreateBean is " +query);
 		bean.setUsername(username);
-		bean.setPassword(resultset.getString("password"));
-		System.out.println("Bean pw: " + resultset.getString("password"));
 		bean.setFullname(resultset.getString("fullname"));
 		bean.setEmail(resultset.getString("email"));
 		bean.setOrientation(resultset.getString("orientation"));

@@ -40,4 +40,13 @@ public class UserAuthentication {
 		String db_password = result.getString("password");
 		return password.equals(db_password);
 	}
+	
+	public static String getPassword(String username)throws SQLException
+	{
+		String query = "SELECT password FROM main WHERE username =\'" + username + "\';";
+		ResultSet result = AccessDB.get_result_set(query);
+		result.next();
+		String db_password = result.getString("password");
+		return db_password;
+	}
 }

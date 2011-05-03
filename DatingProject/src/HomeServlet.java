@@ -51,6 +51,7 @@ public class HomeServlet extends HttpServlet {
 		
 		ServletContext scontext = getServletContext();
 		scontext.setAttribute("currentProfile", userprofile);
+		scontext.setAttribute("userProfile", userprofile);
 		System.out.println("homecontext");
 		System.out.println(((ProfileBean)(scontext.getAttribute("currentProfile"))).getUsername());
 		response.sendRedirect("homePage.jsp");
