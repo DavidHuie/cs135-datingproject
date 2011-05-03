@@ -1,3 +1,4 @@
+import java.sql.SQLException;
 import java.util.*;
 import java.io.*;
 import javax.servlet.*;
@@ -35,8 +36,7 @@ public class EditProfileServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProfileBean newBean = new ProfileBean(request.getParameter("username"), 
-				request.getParameter("fullname"), 
-				request.getParameter("password"), 
+				request.getParameter("fullname"),  
 				request.getParameter("email"), 
 				request.getParameter("age"),
 				request.getParameter("sex"),
@@ -51,12 +51,15 @@ public class EditProfileServlet extends HttpServlet {
 				request.getParameter("birthmonth"),
 				request.getParameter("birthyear"),
 				request.getParameter("classyear"));
-				database.InsertProfile.InsertBean(newBean);
-				//maybe don't need this code, we'll see.
-				/*ServletConfig sconfig = getServletConfig();
-				ServletContext scontext = sconfig.getServletContext();
-				scontext.setAttribute("userProfileBean", newBean);
-				scontext.setAttribute("currentProfile", newBean);*/
+				String username = request.getParameter("username");
+				try{
+				String password = login_utilities.UserAuthentication.getPassword(username);
+				database.InsertProfile.InsertBean(newBean, password);
+				}
+				catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				System.out.println("username at edit is " +newBean.getUsername());
 				getServletContext().setAttribute("username",newBean.getUsername());
 				response.sendRedirect("ViewProfileServlet");

@@ -7,11 +7,9 @@
 <title>View Profile</title>
 </head>
 <body>
-Welcome to your profile.
-
 <jsp:useBean id ="currentProfile" type = "Beans.ProfileBean" scope = "application" />
+Welcome to your profile <jsp:getProperty name = "currentProfile" property = "fullname" /><br /><br /> 
 <jsp:getProperty name = "currentProfile" property = "username" /><br />
-<jsp:getProperty name = "currentProfile" property = "fullname" /><br />
 <jsp:getProperty name = "currentProfile" property = "email" /><br />
 <jsp:getProperty name = "currentProfile" property = "age" /><br />
 <jsp:getProperty name = "currentProfile" property = "birthmonth" /><br />
