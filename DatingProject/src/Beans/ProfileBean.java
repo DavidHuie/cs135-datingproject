@@ -71,8 +71,7 @@ public class ProfileBean {
 		this.username = param;
 	}
 	
-	public String getUsername()
-	{
+	public String getUsername(){
 		return(username);
 	}
 	
