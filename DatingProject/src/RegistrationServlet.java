@@ -1,6 +1,6 @@
 
 import java.util.*;
-
+import login_utilities.*;
 import java.sql.*;
 import java.io.IOException;
 import javax.servlet.*;
@@ -75,6 +75,12 @@ public class RegistrationServlet extends HttpServlet {
 		try{
 		Connection connection = database.AccessDB.openconnection();
 		Statement statement = connection.createStatement();
+		if (login_utilities.UserAuthentication.usernameExists(username))
+		{
+			request.setAttribute("Error", true);
+			response.sendRedirect("Registration.jsp");
+		}
+		else{
 		String query = "INSERT INTO main(username, password) VALUES(\""+username+"\", \""+ password+"\");";
 		//add name and password to database.
 		statement.executeUpdate(query);
@@ -84,7 +90,7 @@ public class RegistrationServlet extends HttpServlet {
 		//send request to login servlet.
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/LoginServlet");
 		dispatcher.forward(request, response);
-		
+		}
 		}
 		
 		catch (SQLException sqle) {

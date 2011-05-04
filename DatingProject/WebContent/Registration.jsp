@@ -21,8 +21,8 @@ Password:<input type = "password" name = "password"><br />
 <input type = "submit" value = "Click Here to Register" />
 </form><br />
 <cupid:terror>
-There already exists a user of that name,
-please try another.
+<p>There already exists a user of that name,
+please try another.<p>
 </cupid:terror>
 </body>
 </html>
