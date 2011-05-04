@@ -10,10 +10,9 @@ DatingApp.editButton =function(param){
 	buttonname = param;
 	var button = document.getElementById(buttonname);
 	var textarea = document.getElementById(textareaname);
-	string3 = "DatingApp.saveButton(this.id)";
 	button.innerHTML = "save changes";
-	button.onclick = string3;
 	textarea.readOnly= false;
+	button.onclick = DatingApp.saveButton(this.id);
 };
 
 DatingApp.saveButton = function(param){
@@ -24,6 +23,6 @@ DatingApp.saveButton = function(param){
 	var button = document.getElementById(buttonname);
 	var textarea = document.getElementById(textareaname);
 	button.innerHTML = "edit";
-	button.onclick = string3;
 	textarea.readOnly = true;
+	button.onclick = DatingApp.editButton(this.id);
 };

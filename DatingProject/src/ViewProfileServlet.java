@@ -48,7 +48,7 @@ public class ViewProfileServlet extends HttpServlet {
 		//probably should get the source of the page that it is being sent to from
 		//then it needs to figure out the username of the profile that it will be viewing.
 		//with that information, it can then view the profile.
-		String username= (String)getServletContext().getAttribute("username");
+		String username= (String)getServletContext().getAttribute("vieweeusername");
 		System.out.println("username at ViewProfileServlet is" + username);
 		try{
 		ProfileBean viewBean = database.CreateBean.createBeanFromDB(username);

@@ -24,7 +24,8 @@ Welcome to your profile <jsp:getProperty name = "currentProfile" property = "ful
 <jsp:getProperty name = "currentProfile" property = "dorm" /><br />
 <jsp:getProperty name = "currentProfile" property = "description" /><br />
 <jsp:getProperty name = "currentProfile" property = "activities" /><br />
-
+<br />
+<a href = "index.html">index</a>
 
 
 </body>

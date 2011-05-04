@@ -40,6 +40,7 @@ public class LoginServlet extends HttpServlet {
 		String username = ServletUtilities.filter(request.getParameter("username"));
 		String password = ServletUtilities.filter(request.getParameter("password"));
 		System.out.println("Login Username is" +username);
+		System.out.println("Login Password is" +password);
 		// add cookies to response
 		try {
 			if (UserAuthentication.authenticate_login(username, password)){
