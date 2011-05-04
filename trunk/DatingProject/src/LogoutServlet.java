@@ -1,6 +1,7 @@
 
 
 import java.io.IOException;
+import login_utilities.*;
 import coreservlets.CookieUtilities;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,16 +31,16 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// clear cookies first
-		//Cookies.clearUserCookies(response);
-		response.sendRedirect("/DatingProject/index.html");
+		doPost(request, response);
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		login_utilities.Cookies.clearUserCookies(response);
+		response.sendRedirect("/DatingProject/index.html");
 	}
 
 }

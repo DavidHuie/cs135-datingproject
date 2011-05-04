@@ -57,6 +57,8 @@ Current Profile Info:
 <button type ="button" id = "birthday" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 <br />
+
+
 <b>birth year</b><br />
 <textarea id = "birthyeartext" name = "birthyear"  rows = "3" cols = "35" readonly = true >
 <jsp:getProperty name = "userProfile" property = "birthyear" />
@@ -139,7 +141,9 @@ Current Profile Info:
 <br />
 <input type ="submit" value = "Submit">
 </form>
-
+<br/>
+<br />
+<a href = "LogoutServlet">log out</a>
 
 </body>
 </html>

@@ -62,7 +62,7 @@ public class EditProfileServlet extends HttpServlet {
 				String password = login_utilities.UserAuthentication.getPassword(username);
 				System.out.println("fullname of newBean @ edit: " + newBean.getFullname()+ " email: "+
 						newBean.getEmail());
-				database.db_tools.InsertBean(newBean, password);
+				database.db_tools.editEntry(newBean, password);
 				System.out.println("in edit, Insert bean was called.");
 				}
 				catch (SQLException e) {

@@ -115,7 +115,7 @@ public class db_tools {
 			Connection connection = AccessDB.openconnection();
 			Statement statement = connection.createStatement();
 			String query = "UPDATE main SET "+ type +"=\'"+value+"\'"+" WHERE username=\'"+username+"\';";
-			System.out.println("query at changeInfo = :" + query);
+			System.out.println("query at changeInfo: " + query);
 			statement.executeUpdate(query);
 			
 			}
@@ -125,6 +125,51 @@ public class db_tools {
 			}
 	}
 	
+	public static void editEntry(ProfileBean bean, String pw)
+	{
+		String username = bean.getUsername();
+		String fullname = bean.getFullname();
+		String email = bean.getEmail();
+		String age = bean.getAge();
+		String password = pw;
+		String sex = bean.getSex();
+		String orientation= bean.getOrientation();
+		String description = bean.getDescription();
+		String college = bean.getCollege();
+		String dorm = bean.getDorm();
+		String activities = bean.getActivities();
+		String status = bean.getStatus();
+		String seeking = bean.getSeeking();
+		String birthday = bean.getBirthday();
+		String birthmonth = bean.getBirthmonth();
+		String birthyear = bean.getBirthyear();
+		String classyear = bean.getClassyear();
+		try {
+			Connection connection = AccessDB.openconnection();
+			Statement statement = connection.createStatement();
+			changeInfo(username, "fullname", fullname);
+			changeInfo(username, "email", email);
+			changeInfo(username, "password", password);
+			changeInfo(username, "age", age);
+			changeInfo(username, "classyear", classyear);
+			changeInfo(username, "sex", sex);
+			changeInfo(username, "description", description);
+			changeInfo(username, "dorm", dorm);
+			changeInfo(username, "activities", activities);
+			changeInfo(username, "status", status);
+			changeInfo(username, "birthday", birthday);
+			changeInfo(username, "birthmonth", birthmonth);
+			changeInfo(username, "seeking", fullname);
+			changeInfo(username, "college", fullname);
+			
+			
+			
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	
 }
