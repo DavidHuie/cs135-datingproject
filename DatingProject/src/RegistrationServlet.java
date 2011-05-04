@@ -75,22 +75,22 @@ public class RegistrationServlet extends HttpServlet {
 		try{
 		Connection connection = database.AccessDB.openconnection();
 		Statement statement = connection.createStatement();
-		if (login_utilities.UserAuthentication.usernameExists(username))
-		{
-			request.setAttribute("Error", true);
-			response.sendRedirect("Registration.jsp");
-		}
-		else{
-		String query = "INSERT INTO main(username, password) VALUES(\""+username+"\", \""+ password+"\");";
+			if (login_utilities.UserAuthentication.usernameExists(username))
+			{	
+				request.setAttribute("Error", true);
+				response.sendRedirect("Registration.jsp");
+			}
+			else{
+				String query = "INSERT INTO main(username, password) VALUES(\""+username+"\", \""+ password+"\");";
 		//add name and password to database.
-		statement.executeUpdate(query);
+				statement.executeUpdate(query);
 		//store username and password in request
-		request.setAttribute("username", username);
-		request.setAttribute("password", password);
+				request.setAttribute("username", username);
+				request.setAttribute("password", password);
 		//send request to login servlet.
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/LoginServlet");
-		dispatcher.forward(request, response);
-		}
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/LoginServlet");
+				dispatcher.forward(request, response);
+			}
 		}
 		
 		catch (SQLException sqle) {
