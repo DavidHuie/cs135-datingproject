@@ -36,7 +36,10 @@ public class EditProfileServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ProfileBean newBean = new ProfileBean(request.getParameter("username"), 
+		ProfileBean userProfile = (ProfileBean)getServletContext().getAttribute("userProfile");
+		String  username = userProfile.getUsername();
+		
+		ProfileBean newBean = new ProfileBean(username, 
 				request.getParameter("fullname"),  
 				request.getParameter("email"), 
 				request.getParameter("age"),
@@ -52,7 +55,6 @@ public class EditProfileServlet extends HttpServlet {
 				request.getParameter("birthmonth"),
 				request.getParameter("birthyear"),
 				request.getParameter("classyear"));
-				String username = request.getParameter("username");
 				ServletContext scontext = getServletContext();
 				scontext.setAttribute("currentProfile", newBean);
 				scontext.setAttribute("userProfile", newBean);
@@ -60,14 +62,16 @@ public class EditProfileServlet extends HttpServlet {
 				String password = login_utilities.UserAuthentication.getPassword(username);
 				System.out.println("fullname of newBean @ edit: " + newBean.getFullname()+ " email: "+
 						newBean.getEmail());
-				database.InsertProfile.InsertBean(newBean, password);
+				database.db_tools.InsertBean(newBean, password);
+				System.out.println("in edit, Insert bean was called.");
 				}
 				catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				System.out.println("username at edit is " +newBean.getUsername());
-				getServletContext().setAttribute("username",newBean.getUsername());
+				scontext.setAttribute("vieweeusername",newBean.getUsername());
+				
 				response.sendRedirect("ViewProfileServlet");
 				
 	

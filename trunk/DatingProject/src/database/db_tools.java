@@ -5,7 +5,7 @@ import java.sql.*;
 
 import Beans.*;
 import login_utilities.*;
-public class InsertProfile {
+public class db_tools {
 	/**
 	 * @author Bryce Gerard
 	 * @description inserts a new profile, or an edit of an existing profile into the database.
@@ -40,7 +40,7 @@ public class InsertProfile {
 			password = login_utilities.UserAuthentication.getPassword(username);	
 			query = "DELETE FROM main WHERE username =\'"+username+"\';";
 			statement.executeUpdate(query);
-			}
+			}/*
 			query = "INSERT INTO main(username, " +
 					"fullname, "+
 					"password, "+
@@ -76,6 +76,25 @@ public class InsertProfile {
 					"\""+birthyear+"\", "+ 
 					"\""+seeking+"\", "+
 					"\""+college+"\")";
+					
+	*/
+			query = "INSERT INTO main (username) VALUES("+"\""+username+"\"";
+			changeInfo(username, "fullname", fullname);
+			changeInfo(username, "email", email);
+			changeInfo(username, "password", password);
+			changeInfo(username, "age", age);
+			changeInfo(username, "classyear", classyear);
+			changeInfo(username, "sex", sex);
+			changeInfo(username, "description", description);
+			changeInfo(username, "dorm", dorm);
+			changeInfo(username, "activities", activities);
+			changeInfo(username, "status", status);
+			changeInfo(username, "birthday", birthday);
+			changeInfo(username, "birthmonth", birthmonth);
+			changeInfo(username, "seeking", fullname);
+			changeInfo(username, "college", fullname);
+			
+			
 			statement.executeUpdate(query);
 			
 		
@@ -84,6 +103,28 @@ public class InsertProfile {
 			e.printStackTrace();
 		}
 	}
+	/**
+	 * 
+	 * @param username the username of the profile user whose info you would like to change.
+	 * @param type the category of information you would like to change (e.g. fullname, etc.)
+	 * @param value, the value you would like type to be.
+	 */
+	public static void changeInfo(String username, String type, String value)
+	{
+		try {
+			Connection connection = AccessDB.openconnection();
+			Statement statement = connection.createStatement();
+			String query = "UPDATE main SET "+ type +"=\'"+value+"\'"+" WHERE username=\'"+username+"\';";
+			System.out.println("query at changeInfo = :" + query);
+			statement.executeUpdate(query);
+			
+			}
+		 catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	}
+	
 	
 	
 }

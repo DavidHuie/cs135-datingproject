@@ -12,7 +12,7 @@
 User Name: <input type="text" name="username" /><br/>
 Password: <input type="password" name="password" /><br/>
 <input type="submit" value= "Log In">
-</form>
+</form><br />
 <%@ taglib uri="WEB-INF/tlds/csajsp-taglib.tld" 
 prefix="csajsp" %>
 

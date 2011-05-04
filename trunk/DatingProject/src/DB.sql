@@ -38,7 +38,7 @@ CREATE TABLE messages(
 
 INSERT INTO main (username, fullname, password) VALUES("administrator", "admin administrator", "administrator");
 INSERT INTO main (username, fullname, password) VALUES("matt", "matt", "34");
-INSERT INTO main (username, fullname, password) VALUES("bryce", "bryce", "bryce");
+INSERT INTO main (username, fullname, password) VALUES("joe", "bryce", "bryce");
 INSERT INTO main (username, fullname, password) VALUES("chrysanthia", "chrysanthia", "chrysanthia");
 INSERT INTO main(
 	username,
@@ -77,4 +77,4 @@ INSERT INTO main(
 	birthyear,
 	seeking,
 	college
-) VALUES ("bryce", "Bryce Gerard", "bryce", "bgerard11@cmc.edu", "22", "Senior", "Male", "Straight", "", "Linde", "hiking", "getting my code on", "Jan", "17", "1989", "LOVE", "Harvey Mudd");
+) VALUES ("bryce", "Bryce Gerard", "ilovecmc", "bgerard11@cmc.edu", "22", "Senior", "Male", "Straight", "", "Linde", "hiking", "getting my code on", "Jan", "17", "1989", "LOVE", "Harvey Mudd");

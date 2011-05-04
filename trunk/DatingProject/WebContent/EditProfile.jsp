@@ -12,14 +12,6 @@ Current Profile Info:
 
 <jsp:useBean id ="userProfile" class = "Beans.ProfileBean" scope = "application" />
 <form action = "EditProfileServlet">
-<b>User Name</b><br />
-<textarea id = "usernametext" name = "username" rows = "3" cols = "35" readonly = true >
-<jsp:getProperty name = "userProfile" property = "username" />
-</textarea>
-<br />
-<button type ="button" id = "username" onclick = "DatingApp.editButton(this.id)">Edit</button>
-<br />
-<br />
 
 <b>Full Name</b><br />
 <textarea id = "fullnametext" name = "fullname" rows = "3" cols = "35" readonly = true>
@@ -29,6 +21,7 @@ Current Profile Info:
 <button type ="button" id = "fullname" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 <br />
+
 <b>email</b><br />
 <textarea id = "emailtext" name = "email" rows = "3" cols = "35" readonly = true>
 <jsp:getProperty name = "userProfile" property = "email" />
@@ -37,6 +30,7 @@ Current Profile Info:
 <button type ="button" id = "email" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
 <br />
+
 <b>Age</b><br />
 <textarea id = "agetext" name = "age" rows = "3" cols = "35" readonly = true >
 <jsp:getProperty name = "userProfile" property = "age" />
