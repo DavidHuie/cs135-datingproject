@@ -20,6 +20,6 @@ prefix="csajsp" %>
 	Check out your profile <a href="ViewProfile.jsp">here!</a><br />
 	Check out other people's profile <a href="SearchProfiles.jsp">here!</a><br />
   	<br>
-  	<a href="Logout.jsp">Logout.</a>
+  	<a href="LogoutServlet">Log out.</a>
 </body>
 </html>

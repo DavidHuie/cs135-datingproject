@@ -58,7 +58,7 @@ public class LoginServlet extends HttpServlet {
 				System.out.println("gothereelse");
 				RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
 				request.setAttribute("Error", true);
-				dispatcher.forward(request,response);
+				response.sendRedirect("login.jsp");
 			
 			
 			}
