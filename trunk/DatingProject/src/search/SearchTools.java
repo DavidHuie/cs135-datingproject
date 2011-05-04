@@ -35,7 +35,7 @@ public class SearchTools {
 	}
 	
 	public static ArrayList<DescriptionMatcher> get_matches(String description, String sex, String orientation) throws SQLException {
-		String query = "SELECT * FROM main WHERE main.sex = \"" + sex + "\" AND main.orientation = \"" + orientation + "\"";
+		String query = "SELECT * FROM main WHERE sex = \'" + sex + "orientation = \'" + orientation + "\'";
 		ResultSet set = AccessDB.get_result_set(query);
 		
 		ArrayList<DescriptionMatcher> list = new ArrayList<DescriptionMatcher>();
@@ -57,7 +57,7 @@ public class SearchTools {
 	
 	// Returns the username of a blind match
 	public static String blind_match(String sex, String orientation, String college) throws SQLException {
-		String query = "SELECT * FROM main WHERE main.sex = \"" + sex + "\" AND main.orientation = \"" + orientation + "\"";
+		String query = "SELECT * FROM main WHERE sex=\'" + sex +"\' AND orientation=\'" + orientation + "\'";
 		ResultSet set = AccessDB.get_result_set(query);
 		
 		ArrayList<String> list = new ArrayList<String>();

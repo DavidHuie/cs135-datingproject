@@ -139,10 +139,11 @@ Current Profile Info:
 <br />
 <button type ="button" id = "activities" onclick = "DatingApp.editButton(this.id)">Edit</button>
 <br />
-<input type ="submit" value = "Submit">
+<input type ="submit" value = "Save all edits">
 </form>
 <br/>
 <br />
+<a href = "HomeServlet">home page</a>
 <a href = "LogoutServlet">log out</a>
 
 </body>

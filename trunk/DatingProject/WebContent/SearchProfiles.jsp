@@ -10,13 +10,29 @@
 <title>Search Profiles</title>
 </head>
 <body>
-<h1>Enter Search Terms</h1>
-<form>
+<h1>Search by name</h1><br />
+<form acion ="SearchServlet">
 <input type = "text" name = "query">
+<input type ="submit" value = Search>
+<input type = "hidden" name = "searchtype" id ="searchtype" value ="name" />
 </form>
 <br /> 
 <br />
-
+<h2>Search for users matching my description</h2>
+<form action="SearchServlet">
+<input type = "hidden" name = "searchtype" value ="match" />
+<input type = "submit" value ="Find my soul mate" /> 
+</form>
+<br />
+<br />
+<h3>Search Random user</h3>
+<form action = "SearchServlet">
+<input type = "hidden" name = "searchtype" value = "random" />
+<input type ="submit" value ="I'm getting lucky" />
+</form>
+<br />
+<br />
+ 
 Results:
 <br />
 

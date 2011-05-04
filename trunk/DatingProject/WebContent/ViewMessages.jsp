@@ -10,7 +10,9 @@
 <title>View Messages</title>
 </head>
 <body>
-View Your Messages
+View Your Messages<br />
+
+
 
 
 </body>
