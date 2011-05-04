@@ -40,44 +40,7 @@ public class db_tools {
 			password = login_utilities.UserAuthentication.getPassword(username);	
 			query = "DELETE FROM main WHERE username =\'"+username+"\';";
 			statement.executeUpdate(query);
-			}/*
-			query = "INSERT INTO main(username, " +
-					"fullname, "+
-					"password, "+
-					"email, "+
-					"age, "+
-					"classyear, "+
-					"sex, "+
-					"orientation, "+
-					"description, "+
-					"dorm, "+
-					"activities, "+
-					"status, " +
-					"birthday, " +
-					"birthmonth, "+
-					"birthyear, " +
-					"seeking, " +
-					"college) "+
-					"VALUES("+
-					"\""+username+"\", "+
-					"\""+fullname+"\", "+ 
-					"\""+email+"\", "+ 
-					"\""+password+"\", "+ 
-					"\""+age+"\", "+ 
-					"\""+classyear+"\", "+ 
-					"\""+sex+"\", "+ 
-					"\""+orientation+"\", "+ 
-					"\""+description+"\", "+ 
-					"\""+dorm+"\", "+ 
-					"\""+activities+"\", "+ 
-					"\""+status+"\", " +
-					"\""+birthday+"\", "+ 
-					"\""+birthmonth+"\", "+ 
-					"\""+birthyear+"\", "+ 
-					"\""+seeking+"\", "+
-					"\""+college+"\")";
-					
-	*/
+			}
 			query = "INSERT INTO main (username) VALUES("+"\""+username+"\"";
 			changeInfo(username, "fullname", fullname);
 			changeInfo(username, "email", email);
