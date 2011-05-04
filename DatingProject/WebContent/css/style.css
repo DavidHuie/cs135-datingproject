@@ -1,0 +1,17 @@
+body { background-color: #FFCCFF
+background: pink url('img_tree.png') no-repeat left top;
+margin-right:200px;
+}
+a:hover { color: red }
+.title { 
+  margin-left: auto; 
+  margin-right: auto; 
+  border-width: 5px;
+  border-spacing: 2px;
+  border-style: outset;
+}
+.title th { 
+  background-color: #ef8429;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
