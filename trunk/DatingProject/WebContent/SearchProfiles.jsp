@@ -74,8 +74,9 @@ that is
 		out.println("</table>");
 	}
 %>
-
-
+<br/>
+<a href ="homePage.jsp">main page</a><br />
+<a href ="LogoutServlet">log out</a>
 <a href = "HomeServlet">Home</a><br />
 <a href = "LogoutServlet">Log Out</a>
 </body>

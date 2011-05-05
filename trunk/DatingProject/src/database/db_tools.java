@@ -1,10 +1,31 @@
 package database;
-import java.util.*;
-import java.util.Date;
-import java.sql.*;
-import Beans.*;
-import login_utilities.*;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import Beans.ProfileBean;
 public class db_tools {
+	
+	public static void init_user(String username) {
+		String def = "";
+		changeInfo(username, "fullname", def);
+		changeInfo(username, "age", def);
+		changeInfo(username, "email", def);
+		changeInfo(username, "orientation", def);
+		changeInfo(username, "classyear", def);
+		changeInfo(username, "sex", def);
+		changeInfo(username, "description", def);
+		changeInfo(username, "dorm", def);
+		changeInfo(username, "activities", def);
+		changeInfo(username, "status", def);
+		changeInfo(username, "birthday", def);
+		changeInfo(username, "birthmonth", def);
+		changeInfo(username, "birthyear", def);
+		changeInfo(username, "seeking", def);
+		changeInfo(username, "college", def);
+	}
+	
+	
 	/**
 	 * @author Bryce Gerard
 	 * @description inserts a new profile, or an edit of an existing profile into the database.
@@ -45,6 +66,7 @@ public class db_tools {
 			changeInfo(username, "email", email);
 			changeInfo(username, "password", password);
 			changeInfo(username, "age", age);
+			changeInfo(username, "orientation", orientation);
 			changeInfo(username, "classyear", classyear);
 			changeInfo(username, "sex", sex);
 			changeInfo(username, "description", description);
@@ -53,8 +75,9 @@ public class db_tools {
 			changeInfo(username, "status", status);
 			changeInfo(username, "birthday", birthday);
 			changeInfo(username, "birthmonth", birthmonth);
-			changeInfo(username, "seeking", fullname);
-			changeInfo(username, "college", fullname);
+			changeInfo(username, "birthyear", birthyear);
+			changeInfo(username, "seeking", seeking);
+			changeInfo(username, "college", college);
 			
 			
 			statement.executeUpdate(query);
@@ -109,10 +132,12 @@ public class db_tools {
 		try {
 			Connection connection = AccessDB.openconnection();
 			Statement statement = connection.createStatement();
+			
 			changeInfo(username, "fullname", fullname);
 			changeInfo(username, "email", email);
 			changeInfo(username, "password", password);
 			changeInfo(username, "age", age);
+			changeInfo(username, "orientation", orientation);
 			changeInfo(username, "classyear", classyear);
 			changeInfo(username, "sex", sex);
 			changeInfo(username, "description", description);
@@ -121,8 +146,9 @@ public class db_tools {
 			changeInfo(username, "status", status);
 			changeInfo(username, "birthday", birthday);
 			changeInfo(username, "birthmonth", birthmonth);
-			changeInfo(username, "seeking", fullname);
-			changeInfo(username, "college", fullname);
+			changeInfo(username, "birthyear", birthyear);
+			changeInfo(username, "seeking", seeking);
+			changeInfo(username, "college", college);
 			
 			
 			

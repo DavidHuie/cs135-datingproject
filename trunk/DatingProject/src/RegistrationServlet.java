@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import database.db_tools;
+
 /**
  * Servlet implementation class RegistrationServlet
  */
@@ -69,8 +71,7 @@ public class RegistrationServlet extends HttpServlet {
 		Statement statement = connection.createStatement();
 			if (login_utilities.UserAuthentication.usernameExists(username))
 			{	
-				request.setAttribute("Error", true);
-				response.sendRedirect("Registration.jsp");
+				response.sendRedirect("RegistrationError.html");
 			}
 			else{
 				String query = "INSERT INTO main(username, password) VALUES(\""+username+"\", \""+ password+"\");";
@@ -82,6 +83,7 @@ public class RegistrationServlet extends HttpServlet {
 				response.sendRedirect("HomeServlet");
 		
 			}
+			db_tools.init_user(username);
 		}
 		
 		catch (SQLException sqle) {

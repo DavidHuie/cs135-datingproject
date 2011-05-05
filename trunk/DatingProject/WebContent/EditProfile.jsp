@@ -11,6 +11,9 @@
 <script type = "text/javascript" src = "DatingScripts.js"></script>
 </head>
 <body>
+
+<%@ page import="java.util.*, coreservlets.*, Beans.*, Keywords.*" %>
+
 Current Profile Info:
 
 <jsp:useBean id ="userProfile" class = "Beans.ProfileBean" scope = "application" />
@@ -75,19 +78,36 @@ Current Profile Info:
 <br />
 <br />
 
+<%  ServletConfig sconfig = getServletConfig();
+	ServletContext scontext = sconfig.getServletContext();
+
+	ProfileBean user_bean = (ProfileBean) scontext.getAttribute("userProfile"); 
+	String sex = user_bean.getSex();
+	String orientation = user_bean.getOrientation();
+%>
+
+<%! private String check_selected(String x, String y) {
+	if (x.equals(y)) {
+		return "selected";
+	} else {
+		return "";
+	}}
+	%>
+
+
 <b>sex</b><br />
-<textarea id = "sextext" name = "sex" rows = "3" cols = "35" readonly = true >
-<jsp:getProperty name = "userProfile" property = "sex" />
-</textarea><br />
-<button type ="button" id = "sex" onclick = "DatingApp.editButton(this.id)">Edit</button>
+<select name="sex">
+<option <%=check_selected(sex,Keywords.male)%> value="<%=Keywords.male%>"><%=Keywords.male%></option>
+<option <%=check_selected(sex,Keywords.female)%> value="<%=Keywords.female%>"><%=Keywords.female%></option>
+</select>
 <br />
 <br />
 
 <b>orientation</b><br />
-<textarea id= "orientationtext" name = "orientation" rows = "3" cols = "35" readonly = true>
-<jsp:getProperty name = "userProfile" property = "orientation" />
-</textarea><br />
-<button type ="button" id = "orientation" onclick = "DatingApp.editButton(this.id)">Edit</button>
+<select name="orientation">
+<option <%=check_selected(orientation,Keywords.straight)%> value="<%=Keywords.straight%>"><%=Keywords.straight%></option>
+<option <%=check_selected(orientation,Keywords.gay)%> value="<%=Keywords.gay%>"><%=Keywords.gay%></option>
+</select>
 <br />
 <br />
 <b>status</b><br />
