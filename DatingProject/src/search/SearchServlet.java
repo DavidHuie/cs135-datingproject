@@ -2,15 +2,12 @@ package search;
 
 import java.io.IOException;
 import java.util.*;
-import java.io.*;
 import java.sql.*;
 
-import search.*;
 import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 import Beans.*;
-import database.*;
 
 /**
  * Servlet implementation class SearchServlet
@@ -18,6 +15,8 @@ import database.*;
 @WebServlet("/SearchServlet")
 public class SearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	public static Integer num_results = 20;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -40,65 +39,67 @@ public class SearchServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String searchtype = null;
 		searchtype = request.getParameter("searchtype");
-		if (searchtype == null)
+		
+		System.out.println("before if");
+		
+		if(searchtype =="name")
 		{
-			response.sendRedirect("SearchProfiles.jsp");
+			System.out.println("in name");
+			try {
+				searchByName(request, response);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		else if(searchtype == "match")
-		{
-			searchByMatch(request, response);
-		}
-	
-		else if(searchtype == "random")
-		{
-			searchByRandom(request, response);
-	
-		}
-
-		else if(searchtype =="name")
-		{
-			searchByName(request, response);
-		}
+		
+		System.out.println("after if");
 		
 	}
 
-		public void searchByMatch(HttpServletRequest request, HttpServletResponse response)
-		{
-			ProfileBean currentuser = (ProfileBean)getServletContext().getAttribute("userProfile");
-			String username = currentuser.getUsername();
-			String description = currentuser.getDescription();
-			String sex = currentuser.getSex();
-			String orientation = currentuser.getOrientation();
-			if((sex!=null)&&(orientation !=null)&& (description!=null))
-			{
-				try {
-					int k;
-					String beanname;
-					String resultusername;
-					ArrayList<DescriptionMatcher> list = search.SearchTools.get_matches(description, sex, orientation);
-					DescriptionMatcher match;
-					for(int i =0; i<6; i++)
-					{
-						match = list.get(i);
-						k = i +1;
-						resultusername = match.username;
-						beanname = "ProfileBean" + Integer.toString(i);
-						ProfileBean 
-					}
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+	public void searchByMatch(HttpServletRequest request, HttpServletResponse response)
+	{
+		return;
+	}
+
+	public void searchByRandom(HttpServletRequest request, HttpServletResponse response)
+	{
+		return;
+	}
+	
+	private static ArrayList<ProfileBean> get_beans(ArrayList<QueryableName> results) throws SQLException {
+		ArrayList<ProfileBean> new_results = new ArrayList<ProfileBean>();
+		
+		Integer count = 0;
+		
+		for (Iterator<QueryableName> i = results.listIterator(); i.hasNext();) {
+			if (count == num_results) {
+				break;
 			}
-		}
-
-		public void searchByRandom(HttpServletRequest request, HttpServletResponse response)
-		{
 			
+			String username = i.next().username;
+			ProfileBean new_bean = database.CreateBean.createBeanFromDB(username);
+			new_results.add(new_bean);
+			count++;
 		}
+		
+		return new_results;
+	}
 
-		public void searchByName(HttpServletRequest request, HttpServletResponse response)
-		{
-			
-		}
+	public void searchByName(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException
+	{
+		
+		
+		String query = request.getParameter("query");
+		
+		ArrayList<QueryableName> names = search.SearchTools.get_queryable_names_list(query);
+		ArrayList<ProfileBean> results = get_beans(names);
+		
+		ServletConfig sconfig = getServletConfig();
+		ServletContext scontext = sconfig.getServletContext();
+		
+		scontext.setAttribute("search_results", results);
+		
+		response.sendRedirect("SearchProfiles.jsp");
+	}
 }

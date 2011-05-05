@@ -11,82 +11,39 @@
 </head>
 <body>
 <h1>Search by name</h1><br />
-<form acion ="SearchServlet">
+<form action ="SearchServlet" method="post">
 <input type = "text" name = "query">
 <input type ="submit" value = Search>
-<input type = "hidden" name = "searchtype" id ="searchtype" value ="name" />
+<input type ="hidden" name="searchtype" value="name" />
 </form>
-<br /> 
-<br />
-<h2>Search for users matching my description</h2>
-<form action="SearchServlet">
-<input type = "hidden" name = "searchtype" value ="match" />
-<input type = "submit" value ="Find my soul mate" /> 
-</form>
-<br />
-<br />
-<h3>Search Random user</h3>
-<form action = "SearchServlet">
-<input type = "hidden" name = "searchtype" value = "random" />
-<input type ="submit" value ="I'm getting lucky" />
-</form>
-<br />
-<br />
+
+<%@ page import="java.util.*, coreservlets.*, Beans.*" %>
  
-Results:
-<br />
+ <h1>Results</h1><br />
+ 
+<% 	ServletConfig sconfig = getServletConfig();
+	ServletContext scontext = sconfig.getServletContext();
+ 
+	ArrayList<ProfileBean> results = (ArrayList<ProfileBean>) scontext.getAttribute("search_results");
+	
+	if (results == null) {
+		out.println("<b>No search results.</b>");
+	} else {
+		out.println("<table border=\"1\">");
+	
+		for (Iterator<ProfileBean> i = results.listIterator(); i.hasNext();) {
+			ProfileBean profile = i.next();
+			String list = "<td><ul>" + "<li>Name: " + profile.getFullname() + "</li>" +
+								   "<li>Sex: " + profile.getSex() + "</li>" +
+								   "<li>Age: " + profile.getAge() + "</li>" +
+								   "<li>College: " + profile.getCollege() + "</li>" + 
+								   "<li>Description: " + profile.getDescription() + "</li>" + "</ul></td>";
+			out.println("<tr>" + list + "</tr>");
+		}
+		out.println("</table>");
+	}
+%>
 
-<jsp:useBean id ="ResultsProfile1" class = "Beans.ProfileBean" scope = "page" />
-<jsp:getProperty name = "ResultsProfile1" property = "username" /><br />
-<form action = ViewProfileServlet">
-<input type = "hidden" name = "username" value = <jsp:getProperty name = "Profile1" property = "username" /> />
-<input type = "submit" value = "View Profile" />
-</form>
-<br />
-<br />
-
-<jsp:useBean id ="ResultsProfile2" class = "Beans.ProfileBean" scope = "page" />
-<jsp:getProperty name = "ResultsProfile1" property = "username" /><br />
-<form action = ViewProfileServlet">
-<input type = "hidden" name = "username" value = <jsp:getProperty name = "Profile1" property = "username" /> />
-<input type = "submit" value = "View Profile" />
-</form>
-<br />
-<br />
-
-<jsp:useBean id ="ResultsProfile3" class = "Beans.ProfileBean" scope = "page" />
-<jsp:getProperty name = "ResultsProfile1" property = "username" /><br />
-<form action = ViewProfileServlet">
-<input type = "hidden" name = "username" value = <jsp:getProperty name = "Profile1" property = "username" /> />
-<input type = "submit" value = "View Profile" />
-</form>
-
-<jsp:useBean id ="ResultsProfile4" class = "Beans.ProfileBean" scope = "page" />
-<jsp:getProperty name = "ResultsProfile1" property = "username" /><br />
-<form action = ViewProfileServlet">
-<input type = "hidden" name = "username" value = <jsp:getProperty name = "Profile1" property = "username" /> />
-<input type = "submit" value = "View Profile" />
-</form>
-<br />
-<br />
-
-<jsp:useBean id ="ResultsProfile5" class = "Beans.ProfileBean" scope = "page" />
-<jsp:getProperty name = "ResultsProfile1" property = "username" /><br />
-<form action = ViewProfileServlet">
-<input type = "hidden" name = "username" value = <jsp:getProperty name = "Profile1" property = "username" /> />
-<input type = "submit" value = "View Profile" />
-</form>
-<br />
-<br />
-
-<jsp:useBean id ="ResultsProfile6" class = "Beans.ProfileBean" scope = "page" />
-<jsp:getProperty name = "ResultsProfile1" property = "username" /><br />
-<form action = ViewProfileServlet">
-<input type = "hidden" name = "username" value = <jsp:getProperty name = "Profile1" property = "username" /> />
-<input type = "submit" value = "View Profile" />
-</form>
-<br />
-<br />
 
 
 </body>
