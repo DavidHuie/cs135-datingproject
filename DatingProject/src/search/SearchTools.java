@@ -34,6 +34,7 @@ public class SearchTools {
 		return list;
 	}
 	
+	// Matches based on similarity of description, sexuality, and sex
 	public static ArrayList<DescriptionMatcher> get_matches(String description, String sex, String orientation) throws SQLException {
 		String query = "SELECT * FROM main WHERE sex = \'" + sex + "\' AND orientation = \'" + orientation + "\'";
 		ResultSet set = AccessDB.get_result_set(query);
