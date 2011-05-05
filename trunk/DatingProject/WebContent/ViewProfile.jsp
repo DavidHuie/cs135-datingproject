@@ -39,7 +39,7 @@
 <input type="hidden" name="recipient" value="<jsp:getProperty name = "currentProfile" property = "username" />">
 <input type = "submit" value = "send">
 </form>
-<a href = "index.html">index</a><br />
+<a href = "index.html">Home</a><br />
 <a href = "LogoutServlet">log out</a>
 
 </body>

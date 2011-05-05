@@ -143,7 +143,7 @@ Current Profile Info:
 </form>
 <br/>
 <br />
-<a href = "HomeServlet">home page</a>
+<a href = "HomeServlet">Home</a>
 <a href = "LogoutServlet">log out</a>
 
 </body>

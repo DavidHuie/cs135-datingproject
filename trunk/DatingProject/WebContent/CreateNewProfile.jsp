@@ -3,16 +3,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet"
-      href="./css/style.css"
-      type="text/css"/>
+<link rel="stylesheet" href="./css/style.css" type="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Edit your profile</title>
 </head>
 <h1>Update your profile...</h1>
 <body>
 	<form action="/editProfileServlet" method="post">
-		Age:<input type="int" value="--None--" name="age"><br /> 
+		Age:<input type="int" value="--None--" name="age"><br />
 		Birthday:<select name="birthmonth">
 			<option value="month" selected="selected">Month</option>
 			<option value="january">January</option>
@@ -73,21 +71,21 @@
 			<option value="1991">1991</option>
 			<option value="1992">1992</option>
 			<option value="1993">1993</option>
-		</select><br /> 
-		School: <select name="school">
-		<option value="none" selected="selected">--None--</option>
+		</select><br /> School: <select name="school">
+			<option value="none" selected="selected">--None--</option>
 			<option value="cmc">Claremont McKenna</option>
 			<option value="hmc">Harvey Mudd</option>
 			<option value="pitz">Pitzer</option>
 			<option value="pomo">Pomona</option>
 			<option value="scripps">Scripps</option>
-		</select><br />
-		Sex:<input type="text" value="--None--" name="sex"><br /> 
-		Seeking:<input type="text" value="--None--" name="seeking"><br /> 
-		Description:<textarea>I am...</textarea><br />
-		Activities:<textarea>I like...</textarea><br />
-		<input type = "hidden" name = "newOrOld" value = "new" />
-		<input type="submit" value="Save Changes" />
-		
+		</select><br /> Sex:<input type="text" value="--None--" name="sex"><br />
+		Seeking:<input type="text" value="--None--" name="seeking"><br />
+		Description:
+		<textarea>I am...</textarea>
+		<br /> Activities:
+		<textarea>I like...</textarea>
+		<br /> <input type="hidden" name="newOrOld" value="new" /> <input
+			type="submit" value="Save Changes" /> <a href="index.html">Home</a><br />
+		<a href="LogoutServlet">log out</a>
 </body>
 </html>
