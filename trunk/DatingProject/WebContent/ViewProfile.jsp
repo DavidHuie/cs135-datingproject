@@ -15,7 +15,6 @@
 
 <h3>${currentProfile.fullname}</h3>
 <ul>
-<li>${currentProfile.fullname}</li>
 <li><b>user name: </b>${currentProfile.username}</li>
 <li><b>email: </b>${currentProfile.email}</li>
 <li><b>age: </b>${currentProfile.age}</li>
