@@ -61,11 +61,17 @@ public class SendMessageServlet extends HttpServlet {
 		// if the message comes from ViewProfile.jsp
 		ProfileBean currentprofile = (ProfileBean)getServletContext().getAttribute("currentProfile");
 		ProfileBean userprofile = (ProfileBean)getServletContext().getAttribute("userProfile");
-		String recipientname = currentprofile.getUsername();
-		String sendername = userprofile.getUsername();
-		String date = MessageTools.get_timestamp();
+		String recipient = currentprofile.getUsername();
+		String sender = userprofile.getUsername();
+		String timestamp = MessageTools.get_timestamp();
 		String body = request.getParameter("messagebody");
-		
+		try {
+			database.db_tools.SendMessage(sender, recipient, body, timestamp);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		response.sendRedirect("ViewProfileServlet.jsp");
 		
 		
 	}
