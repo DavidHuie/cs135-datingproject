@@ -1,6 +1,7 @@
 
-
+import java .util.*;
 import java.io.IOException;
+import Beans.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,7 +34,11 @@ public class ViewMessagesServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		ProfileBean UserProfile = (ProfileBean)getServletContext().getAttribute("userProfile");
+		String username = UserProfile.getUsername();
+		
+		
+		
 	}
 
 }
