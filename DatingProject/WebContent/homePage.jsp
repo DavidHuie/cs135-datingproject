@@ -18,7 +18,7 @@ prefix="csajsp" %>
 	
 	Edit your profile <a href="EditProfile.jsp">here!</a><br />
 	Check out your profile <a href="ViewProfile.jsp">here!</a><br />
-	Check out other people's profile <a href="SearchProfiles.jsp">here!</a><br />
+	Check out other people's profiles <a href="SearchProfiles.jsp">here!</a><br />
   	<br>
   	<a href="LogoutServlet">Log out.</a>
 </body>

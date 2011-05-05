@@ -11,4 +11,5 @@ public class Keywords {
 	public static String straight = "Straight";
 	public static String gay = "Gay";
 	public static String bi = "Bi";
+	
 }

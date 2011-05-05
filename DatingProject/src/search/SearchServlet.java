@@ -48,21 +48,56 @@ public class SearchServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		} else if (searchtype.equals("match")) {
+			try {
+				searchByMatch(request, response);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 	}
-
-	public void searchByMatch(HttpServletRequest request, HttpServletResponse response)
-	{
-		return;
+	
+	private static ArrayList<ProfileBean> get_beans_from_DM(ArrayList<DescriptionMatcher> results) throws SQLException {
+		ArrayList<ProfileBean> new_results = new ArrayList<ProfileBean>();
+		
+		Integer count = 0;
+		
+		for (Iterator<DescriptionMatcher> i = results.listIterator(); i.hasNext();) {
+			if (count == num_results) {
+				break;
+			}
+			
+			String username = i.next().username;
+			ProfileBean new_bean = database.CreateBean.createBeanFromDB(username);
+			new_results.add(new_bean);
+			count++;
+		}
+		
+		return new_results;
 	}
 
-	public void searchByRandom(HttpServletRequest request, HttpServletResponse response)
+	public void searchByMatch(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException
 	{
-		return;
+		ServletConfig sconfig = getServletConfig();
+		ServletContext scontext = sconfig.getServletContext();
+		
+		ProfileBean user_bean = (ProfileBean) scontext.getAttribute("userProfile");
+
+		String user_description = user_bean.getDescription();
+		String desired_sex = request.getParameter("sex");
+		String orientation = request.getParameter("orientation");
+		
+		ArrayList<DescriptionMatcher> names = search.SearchTools.get_matches(user_description, desired_sex, orientation);
+		ArrayList<ProfileBean> results = get_beans_from_DM(names);
+		
+		scontext.setAttribute("search_results", results);
+		
+		response.sendRedirect("SearchProfiles.jsp");
 	}
 	
-	private static ArrayList<ProfileBean> get_beans(ArrayList<QueryableName> results) throws SQLException {
+	private static ArrayList<ProfileBean> get_beans_from_QN(ArrayList<QueryableName> results) throws SQLException {
 		ArrayList<ProfileBean> new_results = new ArrayList<ProfileBean>();
 		
 		Integer count = 0;
@@ -83,12 +118,10 @@ public class SearchServlet extends HttpServlet {
 
 	public void searchByName(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException
 	{
-		
-		
 		String query = request.getParameter("query");
 		
 		ArrayList<QueryableName> names = search.SearchTools.get_queryable_names_list(query);
-		ArrayList<ProfileBean> results = get_beans(names);
+		ArrayList<ProfileBean> results = get_beans_from_QN(names);
 		
 		ServletConfig sconfig = getServletConfig();
 		ServletContext scontext = sconfig.getServletContext();

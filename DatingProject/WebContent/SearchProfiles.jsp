@@ -10,16 +10,36 @@
 <title>Search Profiles</title>
 </head>
 <body>
-<h1>Search by name</h1><br />
+
+<%@ page import="java.util.*, coreservlets.*, Beans.*, Keywords.*" %>
+
+<h2>Search by Name</h2><br />
 <form action ="SearchServlet" method="post">
 <input type = "text" name = "query">
 <input type ="submit" value = Search>
 <input type ="hidden" name="searchtype" value="name" />
 </form>
 
-<%@ page import="java.util.*, coreservlets.*, Beans.*" %>
+<h2>Find Matches</h2><br />
+<form action ="SearchServlet" method="post">
+I'm looking for a
+<select name="sex">
+<option value="<%=Keywords.male%>"><%=Keywords.male%></option>
+<option value="<%=Keywords.female%>"><%=Keywords.female%></option>
+</select>
+that is
+<select name="orientation">
+<option value="<%=Keywords.straight%>"><%=Keywords.straight%></option>
+<option value="<%=Keywords.gay%>"><%=Keywords.gay%></option>
+</select>
+<input type ="submit" value = Search>
+<input type ="hidden" name="searchtype" value="match" />
+</form>
+
+
+
  
- <h1>Results</h1><br />
+ <h2>Results</h2><br />
  
 <% 	ServletConfig sconfig = getServletConfig();
 	ServletContext scontext = sconfig.getServletContext();
@@ -27,6 +47,8 @@
 	ArrayList<ProfileBean> results = (ArrayList<ProfileBean>) scontext.getAttribute("search_results");
 	
 	if (results == null) {
+		out.println("<b>No search results.</b>");
+	} else if (results.size() == 0){
 		out.println("<b>No search results.</b>");
 	} else {
 		out.println("<table border=\"1\">");
