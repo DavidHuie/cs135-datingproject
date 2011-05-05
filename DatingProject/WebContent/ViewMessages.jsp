@@ -10,7 +10,38 @@
 <title>View Messages</title>
 </head>
 <body>
-View Your Messages<br />
+
+<h1>Messages</h1>
+<%@ page import="java.util.*, coreservlets.*, Beans.*, Keywords.*,messaging.*" %>
+
+<%  ServletConfig sconfig = getServletConfig();
+	ServletContext scontext = sconfig.getServletContext();
+ 
+	ProfileBean user_bean = (ProfileBean) scontext.getAttribute("userProfile");
+	String username = user_bean.getUsername();
+	ArrayList<Message> messages = MessageTools.get_recipient_messages(username);
+	
+	if (messages == null) {
+		out.println("<b>No messages.</b>");
+	} else if (messages.size() == 0){
+		out.println("<b>No messages.</b>");
+	} else {
+		out.println("<table border=\"1\">");
+	
+		for (Iterator<Message> i = messages.listIterator(); i.hasNext();) {
+			Message message = i.next();
+			  
+			String list = "<td><ul>" + "<li>Sender: " + message.sender + "</li>" +
+								       "<li>Date: " + message.time_stamp.toString() + "</li>" +
+								       "<li>Message: " + message.message_body + "</li>" + "</ul></td>";
+			
+			out.println("<tr>" + list + "</tr>");
+		}
+		out.println("</table>");
+	}
+%>
+
+
 
 
 
