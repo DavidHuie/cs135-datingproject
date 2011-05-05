@@ -40,7 +40,7 @@
 		out.println("</table>");
 	}
 %>
-
+<br/>
 <a href ="HomeServlet">Home</a><br />
 <a href ="LogoutServlet">Log Out</a>
 
