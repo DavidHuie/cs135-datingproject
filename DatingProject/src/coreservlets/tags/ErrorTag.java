@@ -18,7 +18,7 @@ public class ErrorTag extends SimpleTagSupport{
 		PageContext context = (PageContext)getJspContext();
 		HttpServletRequest request = (HttpServletRequest)context.getRequest();
 		//only outputs error message if there is an error i.e. a duplicate registration.
-		if(request.getParameter("Error")!=null){
+		if(request.getAttribute("Error")!=null){
 			getJspBody().invoke(null);
 		}
 	}

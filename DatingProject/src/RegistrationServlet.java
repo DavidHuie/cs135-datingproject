@@ -1,10 +1,10 @@
 
 import java.util.*;
 import login_utilities.*;
+
 import java.sql.*;
 import java.io.IOException;
 import javax.servlet.*;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -38,25 +38,17 @@ public class RegistrationServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String RequestType = null;
-		RequestType = request.getParameter("RequestType");
-		if(RequestType == null){
-			RequestType = "none";
-		}
-		if (RequestType.equals("Registration")){
+		
 			try {
 				//Register the User.
 				RegisterUser(request, response);
 				//use request to share information.
-			
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/LoginServlet");
-				
 			} 
 			
 			catch (SQLException sqle) {
 				throw new RuntimeException("Error accessing database: " + sqle);
 			}
-		}
+		
 	}
 
 
@@ -84,11 +76,11 @@ public class RegistrationServlet extends HttpServlet {
 				String query = "INSERT INTO main(username, password) VALUES(\""+username+"\", \""+ password+"\");";
 		//add name and password to database.
 				statement.executeUpdate(query);
-		//store username and password in request
-				request.setAttribute("username", username);
-				request.setAttribute("password", password);
-		//send request to login servlet.
-				response.sendRedirect("LoginServlet");
+				Cookies.createValidatedUserCookies(response, username, password);
+				System.out.println("Cookie Username should be " +username);
+				
+				response.sendRedirect("HomeServlet");
+		
 			}
 		}
 		

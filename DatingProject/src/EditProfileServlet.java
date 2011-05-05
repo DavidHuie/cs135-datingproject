@@ -70,9 +70,9 @@ public class EditProfileServlet extends HttpServlet {
 					e.printStackTrace();
 				}
 				System.out.println("username at edit is " +newBean.getUsername());
-				request.setAttribute("username",newBean.getUsername());
+				request.setAttribute("username", newBean.getUsername());
 				
-				response.sendRedirect("ViewProfileServlet");
+				response.sendRedirect("ViewProfile.jsp");
 				
 	
 	
