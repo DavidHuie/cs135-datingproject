@@ -77,4 +77,4 @@ INSERT INTO main(
 	birthyear,
 	seeking,
 	college
-) VALUES ("bryce", "Bryce Gerard", "ilovecmc", "bgerard11@cmc.edu", "22", "Senior", "Male", "Straight", "", "Linde", "hiking", "getting my code on", "Jan", "17", "1989", "LOVE", "Harvey Mudd");
+) VALUES ("bryce", "Bryce Gerard", "ilovecmc", "bgerard11@cmc.edu", "22", "Senior", "Male", "Straight", "I'm into having sex I ain't into making love so come give me a hug.", "Auen", "beer pong", "single", "March", "31", "1989", "SEX", "CMC");

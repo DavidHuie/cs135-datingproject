@@ -1,6 +1,7 @@
 package messaging;
 
 import java.text.DateFormat;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.sql.ResultSet;
@@ -54,7 +55,7 @@ public class MessageTools{
 		return message_list;
 	}
 	
-	private static String get_timestamp() {
+	public static String get_timestamp() {
 		Date date = new Date();
 		return dateFormat.format(date);
 	}
