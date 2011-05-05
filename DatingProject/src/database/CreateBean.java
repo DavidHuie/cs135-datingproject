@@ -1,7 +1,9 @@
 package database;
 import Beans.*;
 
+import messaging.*;
 import java.sql.*;
+import java.sql.Date;
 import java.util.*;
 
 /**
@@ -48,5 +50,25 @@ public class CreateBean {
 		
 	}
 	
+	public static ArrayList<Message> createMessageListFromDB(String username)throws SQLException
+	{
+		ArrayList<Message> messagearray = new ArrayList<Message>();
+		Connection connection = AccessDB.openconnection();
+		Statement statement = connection.createStatement();
+		String query = "SELECT * FROM messages where recipient=\'"+username+"\';";
+		ResultSet resultset = statement.executeQuery(query);
+		Message message;
+		while(resultset.next())
+		{
+			String sender = resultset.getString("sender");
+			String recipient = resultset.getString(("recipient"));
+			String body = resultset.getString("body");
+			Date timestamp = resultset.getDate("time_stamp"); 
+			message = new Message(sender, recipient, body, timestamp);
+			messagearray.add(message);
+		}
+		Collections.sort(messagearray);
+		return messagearray;
+	}
 	
 }

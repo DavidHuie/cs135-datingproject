@@ -11,22 +11,24 @@
 </head>
 <body>
 <jsp:useBean id ="currentProfile" type = "Beans.ProfileBean" scope = "application" />
-Welcome to your profile <jsp:getProperty name = "currentProfile" property = "fullname" /><br /><br /> 
-<jsp:getProperty name = "currentProfile" property = "username" /><br />
-<jsp:getProperty name = "currentProfile" property = "email" /><br />
-<jsp:getProperty name = "currentProfile" property = "age" /><br />
-<jsp:getProperty name = "currentProfile" property = "birthmonth" /><br />
-<jsp:getProperty name = "currentProfile" property = "birthday" /><br />
-<jsp:getProperty name = "currentProfile" property = "birthyear" /><br />
-<jsp:getProperty name = "currentProfile" property = "classyear" /><br />
-<jsp:getProperty name = "currentProfile" property = "sex" /><br />
-<jsp:getProperty name = "currentProfile" property = "orientation" /><br />
-<jsp:getProperty name = "currentProfile" property = "status" /><br />
-<jsp:getProperty name = "currentProfile" property = "seeking" /><br />
-<jsp:getProperty name = "currentProfile" property = "college" /><br />
-<jsp:getProperty name = "currentProfile" property = "dorm" /><br />
-<jsp:getProperty name = "currentProfile" property = "description" /><br />
-<jsp:getProperty name = "currentProfile" property = "activities" /><br />
+Welcome to the profile of <jsp:getProperty name = "currentProfile" property = "fullname" /><br /><br /> 
+<ul>
+<li><b>User Name: </b><jsp:getProperty name = "currentProfile" property = "username" /></li>
+<li><b>email: </b><jsp:getProperty name = "currentProfile" property = "email" /></li>
+<li><b>age: </b><jsp:getProperty name = "currentProfile" property = "age" /></li>
+<li><b>birthday: </b><jsp:getProperty name = "currentProfile" property = "birthmonth" /> - 
+<jsp:getProperty name = "currentProfile" property = "birthday" /> -
+<jsp:getProperty name = "currentProfile" property = "birthyear" /></li>
+<li><b>class year: </b><jsp:getProperty name = "currentProfile" property = "classyear" /></li>
+<li><b>sex: </b><jsp:getProperty name = "currentProfile" property = "sex" /></li>
+<li><b>orientation: </b><jsp:getProperty name = "currentProfile" property = "orientation" /></li>
+<li><b>status: </b><jsp:getProperty name = "currentProfile" property = "status" /></li>
+<li><b>seeking :</b><jsp:getProperty name = "currentProfile" property = "seeking" /></li>
+<li><b>college: </b>b<jsp:getProperty name = "currentProfile" property = "college" /></li>
+<li><b>dorm: </b><jsp:getProperty name = "currentProfile" property = "dorm" /></li>
+<li><b>description: </b><jsp:getProperty name = "currentProfile" property = "description" /></li>
+<li><b>activities</b><jsp:getProperty name = "currentProfile" property = "activities" /></li>
+</ul>
 <br />
 <b>Send a message to this user</b>
 <form action = "SendMessageServlet">
