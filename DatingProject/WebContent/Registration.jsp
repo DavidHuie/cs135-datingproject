@@ -25,5 +25,6 @@ Password:<input type = "password" name = "password"><br />
 There already exists a user of that name,
 please try another.<p>
 </csajsp:terror>
+<a href = "index.html">Go Back</a>
 </body>
 </html>

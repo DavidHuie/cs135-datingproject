@@ -76,6 +76,7 @@ that is
 %>
 
 
-
+<a href = "HomeServlet">Home</a><br />
+<a href = "LogoutServlet">Log Out</a>
 </body>
 </html>
