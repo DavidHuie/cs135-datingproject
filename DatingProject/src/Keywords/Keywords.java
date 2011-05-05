@@ -10,6 +10,5 @@ public class Keywords {
 	// Orientations
 	public static String straight = "Straight";
 	public static String gay = "Gay";
-	public static String bi = "Bi";
 	
 }

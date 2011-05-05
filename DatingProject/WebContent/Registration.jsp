@@ -13,7 +13,7 @@
 <h1>Register Here</h1>
 <%@ taglib uri ="WEB-INF/tlds/csajsp-taglib.tld" 
 prefix = "csajsp" %>
-<br>Choose A User Name and Password<br/>
+<br>Please choose a username and password:<br/>
 <form action = "RegistrationServlet" method = "post">
 User Name:<input type = "text" name = "username"><br />
 Password:<input type = "password" name = "password"><br />
