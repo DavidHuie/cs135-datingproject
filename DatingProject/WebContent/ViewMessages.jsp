@@ -41,9 +41,8 @@
 	}
 %>
 
-
-
-
+<a href ="homePage.jsp">main page</a><br />
+<a href ="LogoutServlet">log out</a>
 
 
 </body>

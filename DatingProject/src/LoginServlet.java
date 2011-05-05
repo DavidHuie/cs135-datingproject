@@ -55,9 +55,7 @@ public class LoginServlet extends HttpServlet {
 				// Show login error
 				//response.sendError(403, "Invalid user credentials");
 				//sends the user back to Login Page, this time an error will be displayed.
-				System.out.println("gothereelse");
-				request.setAttribute("Error", true);
-				response.sendRedirect("login.jsp");
+				response.sendRedirect("LoginError.html");
 			
 			
 			}
