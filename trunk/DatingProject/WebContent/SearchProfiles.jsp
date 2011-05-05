@@ -33,11 +33,20 @@
 	
 		for (Iterator<ProfileBean> i = results.listIterator(); i.hasNext();) {
 			ProfileBean profile = i.next();
+			String username = profile.getUsername();
+			
+			String profile_link = "<form action =\"ViewProfileServlet\" method=\"post\">" + 
+			  "<input type=\"hidden\" name=\"username\" value=\"" + username + "\">" + 
+			  "<input type =\"submit\" value = \"View Profile\">" + 
+			  "</form>";
+			  
 			String list = "<td><ul>" + "<li>Name: " + profile.getFullname() + "</li>" +
 								   "<li>Sex: " + profile.getSex() + "</li>" +
 								   "<li>Age: " + profile.getAge() + "</li>" +
 								   "<li>College: " + profile.getCollege() + "</li>" + 
-								   "<li>Description: " + profile.getDescription() + "</li>" + "</ul></td>";
+								   "<li>Description: " + profile.getDescription() + "</li>" + 
+								   "<li>" + profile_link + "</li>" + "</ul></td>";
+			
 			out.println("<tr>" + list + "</tr>");
 		}
 		out.println("</table>");
