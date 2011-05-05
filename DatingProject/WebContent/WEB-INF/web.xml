@@ -19,9 +19,9 @@
 			<form-error-page>/login-error.html</form-error-page>
 		</form-login-config>
 	</login-config>
-	<security-constraint>
+	<!-- <security-constraint> -->
 		<!--the following pages require login to view -->
-		<web-resource-collection>
+		<!-- <web-resource-collection>
 			<web-resource-name>Registration</web-resource-name>
 			<url-pattern>/Registration/*</url-pattern>
 		</web-resource-collection>
@@ -47,22 +47,22 @@
 		</web-resource-collection>
 		<auth-constraint>
 			<role-name>administrator</role-name>
-		</auth-constraint>
+		</auth-constraint> -->
 		<!-- only administrator has access to pages associated with registration 
 			page -->
-		<user-data-constraint>
-			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		<!-- <user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee> -->
 			<!--confidential means access by SSL -->
-		</user-data-constraint>
+		<!-- </user-data-constraint>
 	</security-constraint>
 	<security-role>
 		<role-name>david</role-name>
 	</security-role>
 	<security-role>
 		<role-name>bryce</role-name>
-	</security-role>
+	</security-role>-->
 	<security-role>
-		<role-name>chrys</role-name>
+		<role-name>chrysanthia</role-name>
 	</security-role>
 	<security-role>
 		<role-name>administrator</role-name>
