@@ -28,6 +28,12 @@ Welcome to your profile <jsp:getProperty name = "currentProfile" property = "ful
 <jsp:getProperty name = "currentProfile" property = "description" /><br />
 <jsp:getProperty name = "currentProfile" property = "activities" /><br />
 <br />
+<b>Send a message to this user</b>
+<form action = "SendMessageServlet">
+<textarea  name = "messagebody" value ="Insert Message Here">
+</textarea>
+<input type = "submit" value = "send">
+</form>
 <a href = "index.html">index</a><br />
 <a href = "LogoutServlet">log out</a>
 

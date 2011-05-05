@@ -1,8 +1,7 @@
 package database;
 import java.util.*;
-
+import java.util.Date;
 import java.sql.*;
-
 import Beans.*;
 import login_utilities.*;
 public class db_tools {
@@ -134,5 +133,15 @@ public class db_tools {
 		}
 	}
 	
+	public static void SendMessage(String sender, String recipient, String body, String timestamp)throws SQLException
+	{
+		Connection connection = AccessDB.openconnection();
+		Statement statement = connection.createStatement();
+		String query = "INSERT INTO messages(sender, recipient, message_body, time_stamp) VALUES(\""+sender+"\", "+
+		"\""+recipient+"\", "+"\""+body+"\", "+"\""+timestamp+"\");";
+		System.out.println("db_tools.sendmessage query: " +query);
+		statement.executeUpdate(query);
+		
+	}
 	
 }
