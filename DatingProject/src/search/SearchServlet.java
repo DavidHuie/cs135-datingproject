@@ -37,12 +37,9 @@ public class SearchServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String searchtype = null;
-		searchtype = request.getParameter("searchtype");
+		String searchtype = request.getParameter("searchtype");
 		
-		System.out.println("before if");
-		
-		if(searchtype =="name")
+		if(searchtype.equals("name"))
 		{
 			System.out.println("in name");
 			try {
@@ -52,8 +49,6 @@ public class SearchServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		
-		System.out.println("after if");
 		
 	}
 
