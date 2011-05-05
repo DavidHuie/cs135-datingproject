@@ -1,7 +1,4 @@
-body { background-color: #FFCCFF
-background: pink url('img_tree.png') no-repeat left top;
-margin-right:200px;
-}
+body {background-color: #FFCCFF}
 a:hover { color: red }
 .title { 
   margin-left: auto; 
@@ -11,7 +8,7 @@ a:hover { color: red }
   border-style: outset;
 }
 .title th { 
-  background-color: #ef8429;
+  background-color: pink;
   font-size: 28px;
   font-family: Arial, Helvetica, sans-serif;
 }
