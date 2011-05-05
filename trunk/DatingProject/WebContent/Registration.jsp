@@ -12,7 +12,7 @@
 <body>
 <h1>Register Here</h1>
 <%@ taglib uri ="WEB-INF/tlds/csajsp-taglib.tld" 
-prefix = "cupid" %>
+prefix = "csajsp" %>
 <br>Choose A User Name and Password<br/>
 <form action = "RegistrationServlet" method = "post">
 User Name:<input type = "text" name = "username"><br />
@@ -20,9 +20,10 @@ Password:<input type = "password" name = "password"><br />
 <input type = "hidden" name = "requesttype" value = "registration">
 <input type = "submit" value = "Click Here to Register" />
 </form><br />
-<cupid:terror>
-<p>There already exists a user of that name,
+<csajsp:terror>
+<p>
+There already exists a user of that name,
 please try another.<p>
-</cupid:terror>
+</csajsp:terror>
 </body>
 </html>

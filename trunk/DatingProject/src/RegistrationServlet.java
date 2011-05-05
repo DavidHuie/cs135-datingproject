@@ -88,8 +88,7 @@ public class RegistrationServlet extends HttpServlet {
 				request.setAttribute("username", username);
 				request.setAttribute("password", password);
 		//send request to login servlet.
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/LoginServlet");
-				dispatcher.forward(request, response);
+				response.sendRedirect("LoginServlet");
 			}
 		}
 		

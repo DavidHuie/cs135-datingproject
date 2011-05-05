@@ -1,11 +1,8 @@
 package coreservlets.tags;
+import javax.servlet.jsp.*;
+import javax.servlet.jsp.tagext.*;
 import java.io.*;
-import javax.servlet.*;
 import javax.servlet.http.*;
-import java.util.*;
-import javax.servlet.jsp.JspException;
-import javax.servlet.jsp.PageContext;
-import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class ErrorTag extends SimpleTagSupport{
 	
 	/**
@@ -15,6 +12,7 @@ public class ErrorTag extends SimpleTagSupport{
 	 * @throws JspException
 	 * @throws IOException
 	 */
+	@Override
 	public void doTag() throws JspException, IOException
 	{
 		PageContext context = (PageContext)getJspContext();
@@ -25,6 +23,6 @@ public class ErrorTag extends SimpleTagSupport{
 		}
 	}
 	
-	
+}	
 
-}
+

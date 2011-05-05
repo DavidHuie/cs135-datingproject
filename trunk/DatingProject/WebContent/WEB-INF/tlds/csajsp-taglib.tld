@@ -23,4 +23,5 @@
     <tag-class>coreservlets.tags.ErrorTag</tag-class>
     <body-content>scriptless</body-content>
   </tag>
+  
 </taglib>
