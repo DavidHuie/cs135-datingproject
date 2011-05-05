@@ -1,6 +1,6 @@
 body {
 background-color:#d0e4fe;
-background-image:url(file:///C|/Users/Chrysanthia/Desktop/computerScienceHW/DatingProject/WebContent/cupid.png);
+background-image:url("cupid.png");
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-position: bottom right;                  
@@ -10,4 +10,5 @@ h1 {
   font-size: 36px;
   font-style: bold;
   font-family: Arial, Helvetica, sans-serif;
+  text-align:center;
 }
