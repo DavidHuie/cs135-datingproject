@@ -46,11 +46,10 @@ public class LoginServlet extends HttpServlet {
 			if (UserAuthentication.authenticate_login(username, password)){
 				Cookies.createValidatedUserCookies(response, username, password);
 				System.out.println("Cookie Username should be " +username);
-				// Redirect to homepage
-				response.sendRedirect("HomeServlet"); // placeholder
+				
+				response.sendRedirect("HomeServlet");
 				System.out.println("gothere");
-				//RequestDispatcher dispatcher = request.getRequestDispatcher("/HomeServlet");
-				//dispatcher.forward(request, response);
+				
 			} else {
 				// Show login error
 				//response.sendError(403, "Invalid user credentials");
