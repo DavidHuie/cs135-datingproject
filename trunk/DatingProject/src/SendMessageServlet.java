@@ -1,36 +1,16 @@
-import java.util.*;
-
-import database.*;
-
-import java.sql.*;
 import java.io.IOException;
-import javax.servlet.*;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import Beans.*;
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.text.DateFormat;
-import messaging.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Collections;
-import database.AccessDB;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import messaging.MessageTools;
+import Beans.ProfileBean;
 
 /**
  * Servlet implementation class SendMessageServlet
@@ -58,20 +38,22 @@ public class SendMessageServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// if the message comes from ViewProfile.jsp
-		ProfileBean currentprofile = (ProfileBean)getServletContext().getAttribute("currentProfile");
-		ProfileBean userprofile = (ProfileBean)getServletContext().getAttribute("userProfile");
-		String recipient = currentprofile.getUsername();
-		String sender = userprofile.getUsername();
-		String timestamp = MessageTools.get_timestamp();
-		String body = request.getParameter("messagebody");
+		ServletConfig sconfig = getServletConfig();
+		ServletContext scontext = sconfig.getServletContext();
+		
+		ProfileBean user_bean = (ProfileBean) scontext.getAttribute("userProfile");
+		String sender = user_bean.getUsername();
+		String recipient = request.getParameter("recipient");
+		String message_body = request.getParameter("message_body");
+		
 		try {
-			database.db_tools.SendMessage(sender, recipient, body, timestamp);
+			MessageTools.send_message(sender, recipient, message_body);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		response.sendRedirect("ViewProfileServlet.jsp");
+		
+		response.sendRedirect("MessageConfirmation.html");
 		
 		
 	}
